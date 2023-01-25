@@ -1,4 +1,6 @@
 import { Suspense } from 'react';
+
+import Discord from './Discord';
 import Projects, { ProjectsLoading } from './Projects';
 
 export default function Home() {
@@ -17,7 +19,7 @@ export default function Home() {
 				<a href="https://mastodon.lol/@igalaxy" target="_blank">
 					@igalaxy@mastodon.lol
 				</a>{' '}
-				on the fediverse, and @iGalaxy#2018 on Discord
+				on the fediverse, and @iGalaxy#2018 on Discord <Discord />
 			</p>
 			<p>Here's some cool stuff I've built:</p>
 			<Suspense fallback={<ProjectsLoading />}>
