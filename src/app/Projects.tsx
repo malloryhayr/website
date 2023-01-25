@@ -64,8 +64,9 @@ function ProjectCard({
 	return (
 		<div
 			style={{
-				width: '20rem',
-				margin: '0.5rem',
+				width: '20.25rem',
+				marginTop: '0.5rem',
+				marginBottom: '0.5rem',
 				border: `2px solid ${color}`,
 				padding: '0.5rem',
 			}}
@@ -86,6 +87,8 @@ export default async function Projects() {
 				flexWrap: 'wrap',
 				justifyContent: 'space-between',
 				marginTop: '0.5rem',
+				marginLeft: '0.5rem',
+				marginRight: '0.5rem',
 			}}
 		>
 			{data.map(repo => {
@@ -157,6 +160,8 @@ export function ProjectsLoading() {
 				flexWrap: 'wrap',
 				justifyContent: 'space-between',
 				marginTop: '0.5rem',
+				marginLeft: '0.5rem',
+				marginRight: '0.5rem',
 			}}
 		>
 			<ProjectCard color="#ab48ab">
