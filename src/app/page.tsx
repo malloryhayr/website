@@ -21,7 +21,7 @@ export default function Home() {
 				</a>{' '}
 				on the fediverse, and @iGalaxy#2018 on Discord <Discord />
 			</p>
-			<p>Here's some cool stuff I've built:</p>
+			<p>Here's some cool stuff I've built/worked on:</p>
 			<Suspense fallback={<ProjectsLoading />}>
 				{/* @ts-expect-error Server Component */}
 				<Projects />

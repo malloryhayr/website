@@ -59,9 +59,53 @@ function ProjectsFooter() {
 }
 
 function ProjectCard({
-	children,
+	repo,
 	color,
-}: React.PropsWithChildren<{ color: string }>) {
+	children,
+}: React.PropsWithChildren<{
+	repo: GitHubPinnedRepo | undefined;
+	color: string;
+}>) {
+	if (!repo) {
+		return (
+			<div
+				style={{
+					width: '20.25rem',
+					marginTop: '0.5rem',
+					marginBottom: '0.5rem',
+					border: `2px solid ${color}`,
+					padding: '0.5rem',
+					color: color,
+				}}
+				className="project"
+			>
+				{children}
+			</div>
+		);
+	}
+
+	const EMOJI_OVERRIDES: { [key: string]: string } = {
+		'mcpeachpies/mcpeachpies-datapacks': '🍑',
+	};
+
+	let emoji = `${repo?.description
+		.match(/\p{Extended_Pictographic}/gu)
+		?.flat()
+		.join('')}`;
+	let description = repo?.description.replace(
+		`${repo?.description
+			.match(/\p{Extended_Pictographic}/gu)
+			?.flat()
+			.join('')} `,
+		''
+	);
+
+	if (repo.owner == 'iGalaxyYT' && repo.repo == 'website')
+		description += " (You're looking at it!)";
+
+	if (EMOJI_OVERRIDES[`${repo.owner}/${repo.repo}`])
+		emoji = EMOJI_OVERRIDES[`${repo.owner}/${repo.repo}`];
+
 	return (
 		<div
 			style={{
@@ -74,7 +118,42 @@ function ProjectCard({
 			}}
 			className="project"
 		>
-			{children}
+			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+				<strong
+					style={{
+						display: 'inline-block',
+						width: '210px',
+						whiteSpace: 'nowrap',
+						overflow: 'hidden',
+						textOverflow: 'ellipsis',
+					}}
+				>
+					{emoji != 'undefined' ? `${emoji}` : ''}{' '}
+					{repo.owner != 'iGalaxyYT' ? `${repo.owner}/` : ''}
+					{repo.repo}
+				</strong>
+				<p>{repo.stars}★</p>
+			</div>
+			<p>{formatDescription(description).firstLine}</p>
+			<p
+				style={{
+					overflow: 'hidden',
+					whiteSpace: 'nowrap',
+					textOverflow: 'ellipsis',
+				}}
+			>
+				{formatDescription(description).secondLine}
+				&nbsp;
+			</p>
+			<p style={{ textAlign: 'right' }}>
+				<a
+					href={`https://github.com/${repo.owner}/${repo.repo}`}
+					target="_blank"
+					className="external"
+				>
+					Read More
+				</a>
+			</p>
 		</div>
 	);
 }
@@ -94,58 +173,12 @@ export default async function Projects() {
 			}}
 		>
 			{data.map(repo => {
-				const emoji = `${repo?.description
-					.match(/\p{Extended_Pictographic}/gu)
-					?.flat()
-					.join('')}`;
-				let description = repo?.description.replace(
-					`${repo?.description
-						.match(/\p{Extended_Pictographic}/gu)
-						?.flat()
-						.join('')} `,
-					''
-				);
-
-				if (repo.owner == 'iGalaxyYT' && repo.repo == 'website')
-					description += " (You're looking at it!)";
-
 				return (
-					<ProjectCard key={`project-${repo.repo}`} color="#ffacff">
-						<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-							<strong
-								style={{
-									display: 'inline-block',
-									width: '210px',
-									whiteSpace: 'nowrap',
-									overflow: 'hidden',
-									textOverflow: 'ellipsis',
-								}}
-							>
-								{emoji} {repo.repo}
-							</strong>
-							<p>{repo.stars}★</p>
-						</div>
-						<p>{formatDescription(description).firstLine}</p>
-						<p
-							style={{
-								overflow: 'hidden',
-								whiteSpace: 'nowrap',
-								textOverflow: 'ellipsis',
-							}}
-						>
-							{formatDescription(description).secondLine}
-							&nbsp;
-						</p>
-						<p style={{ textAlign: 'right' }}>
-							<a
-								href={`https://github.com/${repo.owner}/${repo.repo}`}
-								target="_blank"
-								className="external"
-							>
-								Read More
-							</a>
-						</p>
-					</ProjectCard>
+					<ProjectCard
+						key={`project-${repo.repo}`}
+						color="#ffacff"
+						repo={repo}
+					/>
 				);
 			})}
 			<ProjectsFooter />
@@ -167,7 +200,7 @@ export function ProjectsLoading() {
 				marginRight: '0.5rem',
 			}}
 		>
-			<ProjectCard color="#ab48ab">
+			<ProjectCard color="#ab48ab" repo={undefined}>
 				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
 					<strong>███████</strong>
 					<p>0★</p>
@@ -180,7 +213,7 @@ export function ProjectsLoading() {
 					</a>
 				</p>
 			</ProjectCard>
-			<ProjectCard color="#852c85">
+			<ProjectCard color="#852c85" repo={undefined}>
 				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
 					<strong>███████</strong>
 					<p>0★</p>
@@ -193,7 +226,7 @@ export function ProjectsLoading() {
 					</a>
 				</p>
 			</ProjectCard>
-			<ProjectCard color="#631663">
+			<ProjectCard color="#631663" repo={undefined}>
 				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
 					<strong>███████</strong>
 					<p>0★</p>
