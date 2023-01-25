@@ -8,10 +8,6 @@ body,
 }
 
 html {
-	display: flex;
-	justify-content: center;
-	height: 100%;
-
 	background-color: #0a000a;
 	color: #ffacff;
 	font-family: 'JetBrains Mono', monospace;
@@ -20,11 +16,20 @@ html {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+}
+
+nav {
 	width: 45rem;
+
+	margin-top: 40px;
 }
 
 main {
-	margin-top: 50px;
+	width: 45rem;
 
 	p {
 		margin-top: 10px;
@@ -40,7 +45,16 @@ main {
 a {
 	color: #ffacff;
 
-	&::after {
+	&.external::after {
 		content: '🡥';
 	}
+}
+
+.navLink {
+	&.active {
+		cursor: default;
+		text-decoration: none;
+	}
+
+	margin-right: 1rem;
 }

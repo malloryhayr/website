@@ -50,6 +50,7 @@ function ProjectsFooter() {
 				href={`https://github.com/iGalaxyYT`}
 				target="_blank"
 				style={{ color: '#ab48ab' }}
+				className="external"
 			>
 				GitHub
 			</a>
@@ -69,6 +70,7 @@ function ProjectCard({
 				marginBottom: '0.5rem',
 				border: `2px solid ${color}`,
 				padding: '0.5rem',
+				color: color,
 			}}
 			className="project"
 		>
@@ -138,6 +140,7 @@ export default async function Projects() {
 							<a
 								href={`https://github.com/${repo.owner}/${repo.repo}`}
 								target="_blank"
+								className="external"
 							>
 								Read More
 							</a>
@@ -165,22 +168,43 @@ export function ProjectsLoading() {
 			}}
 		>
 			<ProjectCard color="#ab48ab">
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
+				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+					<strong>███████</strong>
+					<p>0★</p>
+				</div>
+				<p>███████████████████████████████████</p>
+				<p>██████████████████████</p>
+				<p style={{ textAlign: 'right' }}>
+					<a target="_blank" className="external" style={{ color: '#ab48ab' }}>
+						Read More
+					</a>
+				</p>
 			</ProjectCard>
 			<ProjectCard color="#852c85">
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
+				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+					<strong>███████</strong>
+					<p>0★</p>
+				</div>
+				<p>███████████████████████████████████</p>
+				<p>██████████████████████</p>
+				<p style={{ textAlign: 'right' }}>
+					<a target="_blank" className="external" style={{ color: '#852c85' }}>
+						Read More
+					</a>
+				</p>
 			</ProjectCard>
 			<ProjectCard color="#631663">
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
+				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+					<strong>███████</strong>
+					<p>0★</p>
+				</div>
+				<p>███████████████████████████████████</p>
+				<p>██████████████████████</p>
+				<p style={{ textAlign: 'right' }}>
+					<a target="_blank" className="external" style={{ color: '#631663' }}>
+						Read More
+					</a>
+				</p>
 			</ProjectCard>
 			<ProjectsFooter />
 		</div>
