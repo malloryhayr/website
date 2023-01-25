@@ -1,3 +1,3 @@
 # 💻 website
 
-Personal website
+My personal website

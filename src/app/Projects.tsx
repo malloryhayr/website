@@ -93,13 +93,16 @@ export default async function Projects() {
 					.match(/\p{Extended_Pictographic}/gu)
 					?.flat()
 					.join('')}`;
-				const description = repo?.description.replace(
+				let description = repo?.description.replace(
 					`${repo?.description
 						.match(/\p{Extended_Pictographic}/gu)
 						?.flat()
 						.join('')} `,
 					''
 				);
+
+				if (repo.owner == 'iGalaxyYT' && repo.repo == 'website')
+					description += " (You're looking at it!)";
 
 				return (
 					<ProjectCard key={`project-${repo.repo}`} color="#ffacff">
