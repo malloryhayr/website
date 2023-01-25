@@ -5,6 +5,7 @@ export default function Head() {
 		<>
 			<meta charSet="utf-8" />
 			<link rel="preconnect" href="https://fonts.gstatic.com" />
+			<meta content="width=device-width, initial-scale=1" name="viewport" />
 
 			<meta property="og:title" content="igalaxy.dev" />
 			<meta property="og:type" content="website" />
