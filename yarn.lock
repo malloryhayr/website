@@ -665,13 +665,6 @@ supports-color@^5.3.0, supports-color@^5.5.0:
   dependencies:
     has-flag "^3.0.0"
 
-swr@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-2.0.1.tgz#8b4c132269fadcd845df4d44bd8722eba484ff71"
-  integrity sha512-6z4FpS9dKAay7axedlStsPahEw25nuMlVh4GHkuPpGptbmEEP8v/+kr0GkAE/7ErUs25U2VFOnZQz3AWfkmXdw==
-  dependencies:
-    use-sync-external-store "^1.2.0"
-
 to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
@@ -698,8 +691,3 @@ use-lanyard@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/use-lanyard/-/use-lanyard-1.4.0.tgz#9471ffc2cd86c839dca0ec8ccb806b285e6a5f27"
   integrity sha512-bWwOvQT/ZgT1FRLlYwiZYaU4ECn9hwWtyhm7AORwFQ1jOsl0wjxkqQLqmdeWc4MlBwVsiEyskTBkb8B+fW425g==
-
-use-sync-external-store@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
-  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
