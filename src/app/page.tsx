@@ -1,17 +1,29 @@
 import { Suspense } from 'react';
 
-import Discord from './Discord';
-import Projects, { ProjectsLoading } from './Projects';
+import GenericLoading from './GenericLoading';
+import OnlineStatus from './OnlineStatus';
+import Pronouns from './Pronouns';
 
 export default function Home() {
 	return (
 		<>
 			<p>
-				Hey, I'm <strong>Mallory</strong> (she/they)
+				Hi, I'm <strong>Mallory</strong>{' '}
+				<Suspense fallback={<GenericLoading />}>
+					{/* @ts-expect-error Server Component */}
+					<Pronouns />
+				</Suspense>
 			</p>
-			<p>I'm a trans software engineer, game designer, & creator</p>
+			<p>
+				I'm a trans software engineer, game designer, & creator.
+				<br />I like doing funky stuff with Minecraft.
+			</p>
 			<p>
 				You can find me at{' '}
+				<a href="https://github.com/iGalaxyYT" target="_blank">
+					iGalaxyYT
+				</a>{' '}
+				on GitHub,{' '}
 				<a href="https://twitter.com/@_iGalaxyYT" target="_blank">
 					@_iGalaxyYT
 				</a>{' '}
@@ -19,13 +31,9 @@ export default function Home() {
 				<a href="https://mastodon.lol/@igalaxy" target="_blank">
 					@igalaxy@mastodon.lol
 				</a>{' '}
-				on the fediverse, and @iGalaxy#2018 on Discord <Discord />
+				on the fediverse, and @iGalaxy#2018 on Discord.
 			</p>
-			<p>Here's some cool stuff I've built/worked on:</p>
-			<Suspense fallback={<ProjectsLoading />}>
-				{/* @ts-expect-error Server Component */}
-				<Projects />
-			</Suspense>
+			<OnlineStatus />
 		</>
 	);
 }
