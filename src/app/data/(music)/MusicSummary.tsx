@@ -10,7 +10,7 @@ export default async function MusicSummary() {
 
 	return (
 		<>
-			I've listened to at least{' '}
+			I've listened to over{' '}
 			<span style={{ color: '#ab48ab' }}>
 				{Math.floor(total / 3600).toLocaleString()}
 			</span>{' '}
@@ -22,7 +22,7 @@ export default async function MusicSummary() {
 export function MusicSummaryLoading() {
 	return (
 		<>
-			I've listened to at least{' '}
+			I've listened to over{' '}
 			<span style={{ color: '#ab48ab' }}>(loading LastFM data)</span> hours of
 			music
 		</>

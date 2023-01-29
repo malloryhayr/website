@@ -13,7 +13,7 @@ export default async function GamesSummary() {
 
 	return (
 		<>
-			and I've played video games for at least{' '}
+			and I've played video games for over{' '}
 			<span style={{ color: '#ab48ab' }}>
 				{Math.floor(total / 60).toLocaleString()}
 			</span>{' '}
@@ -25,7 +25,7 @@ export default async function GamesSummary() {
 export function GamesSummaryLoading() {
 	return (
 		<>
-			and I've played video games for at least{' '}
+			and I've played video games for over{' '}
 			<span style={{ color: '#ab48ab' }}>(loading Steam data)</span> hours.
 		</>
 	);

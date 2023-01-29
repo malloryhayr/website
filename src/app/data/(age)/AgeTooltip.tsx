@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 
 export default function AgeTooltip({
@@ -9,7 +9,13 @@ export default function AgeTooltip({
 }: React.PropsWithChildren<{
 	id: string;
 }>) {
-	return (
+	const [isMounted, setIsMounted] = useState(false);
+
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+
+	return isMounted ? (
 		<Tooltip
 			anchorId={id}
 			place="top"
@@ -20,5 +26,7 @@ export default function AgeTooltip({
 		>
 			{children}
 		</Tooltip>
+	) : (
+		<></>
 	);
 }

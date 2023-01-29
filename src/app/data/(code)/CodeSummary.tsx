@@ -5,7 +5,7 @@ export default async function MusicSummary() {
 
 	return (
 		<>
-			I've written code for at least{' '}
+			I've written code for over{' '}
 			<span style={{ color: '#ab48ab' }}>
 				{Math.floor(
 					data.data.grand_total.total_seconds_including_other_language / 3600
@@ -19,7 +19,7 @@ export default async function MusicSummary() {
 export function CodeSummaryLoading() {
 	return (
 		<>
-			I've written code for at least{' '}
+			I've written code for over{' '}
 			<span style={{ color: '#ab48ab' }}>(loading Wakatime data)</span> hours
 		</>
 	);
