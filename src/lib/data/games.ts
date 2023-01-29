@@ -41,6 +41,9 @@ export async function getGames(): Promise<GamesResponseWithPlaytime> {
 		let data: GamesResponse = await (
 			await fetch(`https://games.igalaxy.dev/api/games`)
 		).json();
+		let lanyard = await fetch(
+			`https://api.lanyard.rest/v1/users/182292736790102017`
+		).then(res => res.json());
 		Object.keys(data).forEach(key => {
 			const column = data[key as keyof GamesResponse];
 			column.forEach(game => {
@@ -49,6 +52,13 @@ export async function getGames(): Promise<GamesResponseWithPlaytime> {
 						steamLibrary.response.games.find(
 							x => x.appid === +game.steamid!
 						)?.playtime_forever;
+				}
+				if (game.title == 'Minecraft: Java Edition') {
+					(game as GameWithPlaytime).playtime =
+						(+lanyard.data.kv.polymc_playtime_steamdeck +
+							+lanyard.data.kv.polymc_playtime_macbook +
+							+lanyard.data.kv.polymc_playtime) /
+						100;
 				}
 			});
 			games[key as keyof GamesResponse] = column as GameWithPlaytime[];
