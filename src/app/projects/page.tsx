@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 
 import ProjectsList, { ProjectsLoading } from './Projects';
 
+export const revalidate = 21600;
+
 export default function Projects() {
 	return (
 		<>

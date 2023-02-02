@@ -5,6 +5,8 @@ import CodeSummary, { CodeSummaryLoading } from './(code)/CodeSummary';
 import GamesSummary, { GamesSummaryLoading } from './(games)/GamesSummary';
 import MusicSummary, { MusicSummaryLoading } from './(music)/MusicSummary';
 
+export const revalidate = 21600;
+
 export default function Data() {
 	return (
 		<>
