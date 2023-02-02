@@ -8,15 +8,17 @@ export default function AgeTooltip({
 	id: string;
 }>) {
 	return (
-		<Tooltip
-			anchorId={id}
-			place="top"
-			className="ageTooltip"
-			noArrow
-			clickable
-			offset={2}
-		>
-			{children}
-		</Tooltip>
+		<div>
+			<Tooltip
+				anchorId={id}
+				place="top"
+				className="ageTooltip"
+				noArrow
+				clickable
+				offset={2}
+			>
+				{children}
+			</Tooltip>
+		</div>
 	);
 }
