@@ -1,5 +1,3 @@
-'use client';
-
 import dayjs from 'dayjs';
 
 import { BIRTHDAY } from '@/lib/constants';
@@ -18,12 +16,10 @@ export default function Age() {
 
 	return (
 		<>
-			<div>
-				<p style={{ marginBottom: '10px' }}>
-					I've been alive for {yearsAliveDisplay} years. That's {weeksAlive}{' '}
-					weeks.
-				</p>
-			</div>
+			<p style={{ marginBottom: '10px' }}>
+				I've been alive for {yearsAliveDisplay} years. That's {weeksAlive}{' '}
+				weeks.
+			</p>
 			<div>
 				{Array(Math.floor(weeksAlive / 52))
 					.fill(undefined)
@@ -226,6 +222,16 @@ export default function Age() {
 					</div>
 				</div>
 			</div>
+		</>
+	);
+}
+
+export function AgeLoading() {
+	return (
+		<>
+			<p style={{ marginBottom: '10px' }}>
+				I've been alive for ██ years. That's ███ weeks.
+			</p>
 		</>
 	);
 }
