@@ -4,7 +4,7 @@ import { BIRTHDAY } from '@/lib/constants';
 import AgeTooltip from './AgeTooltip';
 
 const EVENTS = {
-	'2005-03-13': 'I was born.',
+	// '2005-03-13': 'I was born.',
 };
 
 export default function Age() {
@@ -17,8 +17,8 @@ export default function Age() {
 	return (
 		<>
 			<p style={{ marginBottom: '10px' }}>
-				I've been alive for {yearsAliveDisplay} years. That's {weeksAlive}{' '}
-				weeks.
+				<span style={{ color: '#ab48ab' }}>{yearsAliveDisplay}</span> years
+				alive (<span style={{ color: '#ab48ab' }}>{weeksAlive}</span> weeks)
 			</p>
 			<div>
 				{Array(Math.floor(weeksAlive / 52))

@@ -2,7 +2,8 @@ import 'server-only';
 
 export async function getLastFmUserInfo() {
 	let res = await fetch(
-		`https://ws.audioscrobbler.com/2.0/?method=user.getInfo&api_key=${process.env.LASTFM_KEY}&user=iGalaxyYT&format=json`
+		`https://ws.audioscrobbler.com/2.0/?method=user.getInfo&api_key=${process.env.LASTFM_KEY}&user=iGalaxyYT&format=json`,
+		{ next: { revalidate: 21600 } }
 	);
 
 	return res.json();
@@ -18,7 +19,8 @@ export async function getLastFmTopTracks() {
 	for (let i = 1; i <= totalPages; i++) {
 		let res = await (
 			await fetch(
-				`https://ws.audioscrobbler.com/2.0/?method=user.getTopTracks&api_key=${process.env.LASTFM_KEY}&user=iGalaxyYT&format=json&limit=200&page=${i}`
+				`https://ws.audioscrobbler.com/2.0/?method=user.getTopTracks&api_key=${process.env.LASTFM_KEY}&user=iGalaxyYT&format=json&limit=200&page=${i}`,
+				{ next: { revalidate: 21600 } }
 			)
 		).json();
 

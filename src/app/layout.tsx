@@ -6,11 +6,16 @@ import './tooltip.scss';
 
 import NavLink from './NavLink';
 
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
+
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	dayjs.extend(duration);
+
 	return (
 		<html lang="en">
 			<head />

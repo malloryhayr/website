@@ -28,9 +28,27 @@ interface WakatimeAllTimeSinceTodayResponse {
 	};
 }
 
+interface WakatimeLanguagesAllTimeResponse {
+	data: {
+		color: string;
+		name: string;
+		percent: number;
+	}[];
+}
+
 export async function getWakatimeAllTimeSinceToday(): Promise<WakatimeAllTimeSinceTodayResponse> {
 	let res = await fetch(
-		`https://wakatime.com/share/@iGalaxy/649c0a67-fde1-484b-8c02-54708b026112.json`
+		`https://wakatime.com/share/@iGalaxy/649c0a67-fde1-484b-8c02-54708b026112.json`,
+		{ next: { revalidate: 21600 } }
+	);
+
+	return res.json();
+}
+
+export async function getWakatimeLanguagesAllTime(): Promise<WakatimeLanguagesAllTimeResponse> {
+	let res = await fetch(
+		`https://wakatime.com/share/@iGalaxy/b8841fb0-94ff-4d39-b281-276b7ba55131.json`,
+		{ next: { revalidate: 21600 } }
 	);
 
 	return res.json();
