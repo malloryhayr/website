@@ -43,6 +43,24 @@ export default async function MusicDetailed() {
 			<TopAlbums albums={topAlbums.topalbums.album} />
 			<TopTracks tracks={lastFmTopTracks.slice(0, 5)} info={topTrackInfo} />
 			<TopArtists artists={topArtists.topartists.artist} />
+			<p
+				style={{
+					color: '#ab48ab',
+					textAlign: 'right',
+					width: '100%',
+					fontSize: '12px',
+				}}
+			>
+				Fetched from{' '}
+				<a
+					href={`https://www.last.fm/user/iGalaxyYT`}
+					target="_blank"
+					style={{ color: '#ab48ab' }}
+					className="external"
+				>
+					Last.fm
+				</a>
+			</p>
 		</div>
 	);
 }
