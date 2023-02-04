@@ -231,7 +231,8 @@ export default function Age() {
 					marginTop: '4px',
 				}}
 			>
-				Last updated <strong>{dayjs().format('ddd MMM DD YYYY HH:mm')}</strong>
+				Last updated{' '}
+				<strong>{dayjs().format('ddd MMM DD YYYY HH:mm z')}</strong>
 			</p>
 		</>
 	);
