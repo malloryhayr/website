@@ -1,4 +1,5 @@
 import 'server-only';
+import { sleep } from '../utils';
 
 export async function getLastFmUserInfo() {
 	let res = await fetch(
@@ -11,8 +12,6 @@ export async function getLastFmUserInfo() {
 
 export let lastFmTopTracks: any[] = [];
 export let lastFmRecentTracks: any[] = [];
-
-const sleep = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 export async function getLastFmTopTracks() {
 	let tracks = [];

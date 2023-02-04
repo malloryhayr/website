@@ -1,8 +1,10 @@
 import {
+	getLastFmRecentTracks,
 	getLastFmTopAlbums,
 	getLastFmTopArtists,
 	getLastFmTopTracks,
 	getLastFmTrackInfo,
+	lastFmRecentTracks,
 	lastFmTopTracks,
 } from '@/lib/data/music';
 import { formatSeconds } from '@/lib/utils';
@@ -30,18 +32,19 @@ export default async function MusicDetailed() {
 	});
 
 	return (
-		<div>
+		<div style={{ marginTop: '4rem' }}>
 			<p>
 				<span style={{ color: '#ab48ab' }}>
 					{formatSeconds(total, { compact: true })}
 				</span>{' '}
-				listening to music (<span style={{ color: '#ab48ab' }}>---</span> daily
+				listening to music{' '}
+				{/* (<span style={{ color: '#ab48ab' }}>---</span> daily
 				average) <br />
 				Most active day was <strong>---</strong> (
-				<span style={{ color: '#ab48ab' }}>---</span>)
+				<span style={{ color: '#ab48ab' }}>---</span>) */}
 			</p>
 			<TopAlbums albums={topAlbums.topalbums.album} />
-			<TopTracks tracks={lastFmTopTracks.slice(0, 5)} info={topTrackInfo} />
+			{/* <TopTracks tracks={lastFmTopTracks.slice(0, 5)} info={topTrackInfo} /> */}
 			<TopArtists artists={topArtists.topartists.artist} />
 			<p
 				style={{
@@ -49,6 +52,7 @@ export default async function MusicDetailed() {
 					textAlign: 'right',
 					width: '100%',
 					fontSize: '12px',
+					marginTop: '-10px',
 				}}
 			>
 				Fetched from{' '}

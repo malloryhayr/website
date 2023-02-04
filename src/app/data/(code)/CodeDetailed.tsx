@@ -1,6 +1,6 @@
 import {
-	getWakatimeAllTimeSinceToday,
 	getWakatimeLanguagesAllTime,
+	getWakatimeStatsAllTime,
 } from '@/lib/data/code';
 
 import { formatSeconds } from '@/lib/utils';
@@ -8,23 +8,21 @@ import dayjs from 'dayjs';
 
 export default async function CodeDetailed() {
 	const languages = await getWakatimeLanguagesAllTime();
-	const stats = await getWakatimeAllTimeSinceToday();
+	const stats = await getWakatimeStatsAllTime();
 
 	return (
-		<div>
+		<div style={{ marginTop: '4rem' }}>
 			<p>
 				<span style={{ color: '#ab48ab' }}>
-					{formatSeconds(
-						stats.data.grand_total.total_seconds_including_other_language,
-						{ compact: true }
-					)}
+					{formatSeconds(stats.data.total_seconds_including_other_language, {
+						compact: true,
+					})}
 				</span>{' '}
 				writing code (
 				<span style={{ color: '#ab48ab' }}>
-					{formatSeconds(
-						stats.data.grand_total.daily_average_including_other_language,
-						{ compact: true }
-					)}{' '}
+					{formatSeconds(stats.data.daily_average_including_other_language, {
+						compact: true,
+					})}{' '}
 				</span>{' '}
 				daily average)
 				<br />
@@ -64,7 +62,7 @@ export default async function CodeDetailed() {
 							}}
 						>
 							<span
-								style={{ lineHeight: 1, marginRight: '1rem', width: '6rem' }}
+								style={{ lineHeight: 1, marginRight: '1rem', width: '8rem' }}
 							>
 								{x.name}
 							</span>
@@ -89,14 +87,75 @@ export default async function CodeDetailed() {
 									}}
 								></div>
 								{formatSeconds(
-									Math.floor(
-										(x.percent / 100) *
-											stats.data.grand_total
-												.total_seconds_including_other_language
-									),
+									stats.data.languages.find(y => y.name == x.name)
+										?.total_seconds!,
 									{ compact: true }
 								)}{' '}
-								({x.percent}%)
+								({stats.data.languages.find(y => y.name == x.name)?.percent}%)
+							</div>
+						</div>
+					);
+				})}
+			</div>
+			<p>
+				<strong>Top Dependencies</strong>
+			</p>
+			<div
+				style={{
+					display: 'flex',
+					width: '100%',
+					flexDirection: 'column',
+					marginTop: '10px',
+					marginBottom: '10px',
+				}}
+			>
+				{stats.data.dependencies.slice(0, 15).map((x, i) => {
+					return (
+						<div
+							key={`dependency${x.name}`}
+							style={{
+								display: 'flex',
+								flexDirection: 'row',
+								justifyContent: 'space-between',
+								alignItems: 'center',
+								height: '1.25rem',
+								marginBottom: i != 14 ? '0.5rem' : '0',
+							}}
+						>
+							<span
+								style={{
+									lineHeight: 1,
+									marginRight: '1rem',
+									width: '8rem',
+									textOverflow: 'ellipsis',
+									whiteSpace: 'nowrap',
+									overflow: 'hidden',
+								}}
+							>
+								{x.name}
+							</span>
+							<div
+								style={{
+									height: '1.25rem',
+									lineHeight: 1.5,
+									boxShadow: `0px 0px 0px 1px #ab48ab inset`,
+									color: '#ab48ab',
+									flexGrow: 1,
+									display: 'flex',
+									alignItems: 'center',
+									userSelect: 'none',
+								}}
+							>
+								<div
+									style={{
+										width: `${x.percent}%`,
+										height: '100%',
+										backgroundColor: '#ab48ab',
+										marginRight: '0.5rem',
+									}}
+								></div>
+								{formatSeconds(x.total_seconds, { compact: true })} ({x.percent}
+								%)
 							</div>
 						</div>
 					);

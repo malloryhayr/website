@@ -7,15 +7,18 @@ import {
 	SteamAchievement,
 	SteamLibraryResponse,
 } from '@/lib/types/games';
+import { sleep } from '../utils';
 
 let games: GamesResponseWithPlaytime;
 let steamLibrary: SteamLibraryResponse;
 
 async function fetchAchievements(app: string) {
-	return await fetch(
+	const res = await fetch(
 		`https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?appid=${app}&key=${process.env.STEAM_TOKEN}&steamid=76561198271705100&format=json`,
 		{ next: { revalidate: 21600 } }
-	).then(res => res.json());
+	);
+
+	return await res.json();
 }
 
 export async function getGames(): Promise<GamesResponseWithPlaytime> {
@@ -28,6 +31,8 @@ export async function getGames(): Promise<GamesResponseWithPlaytime> {
 			library.response.games.map(async (game: any) => {
 				const achievements = (await fetchAchievements(game.appid)).playerstats
 					.achievements as SteamAchievement[];
+
+				await sleep(50);
 
 				return {
 					...game,

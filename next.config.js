@@ -5,7 +5,11 @@ const nextConfig = {
 	},
 	reactStrictMode: false,
 	images: {
-		domains: ['lastfm.freetls.fastly.net'],
+		domains: [
+			'lastfm.freetls.fastly.net',
+			'cdn2.steamgriddb.com',
+			'steamcdn-a.akamaihd.net',
+		],
 	},
 };
 
