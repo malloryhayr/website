@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { ARTIST_NAME_OVERRIDES } from './TopArtists';
 
 interface LastFMAlbum {
 	artist: {
@@ -91,7 +92,11 @@ export default function TopAlbums({ albums }: { albums: LastFMAlbum[] }) {
 						</div>
 						<p>
 							{x.name} <br />
-							<span style={{ color: '#ab48ab' }}>{x.artist.name}</span>
+							<span style={{ color: '#ab48ab' }}>
+								{ARTIST_NAME_OVERRIDES[x.artist.name]
+									? ARTIST_NAME_OVERRIDES[x.artist.name]
+									: x.artist.name}
+							</span>
 						</p>
 					</div>
 				))}

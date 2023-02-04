@@ -17,7 +17,7 @@ interface LastFMArtist {
 	name: string;
 }
 
-const NAME_OVERRIDES: { [key: string]: string } = {
+export const ARTIST_NAME_OVERRIDES: { [key: string]: string } = {
 	LoveJoy: 'Lovejoy',
 };
 
@@ -111,7 +111,10 @@ export default function TopArtists({ artists }: { artists: LastFMArtist[] }) {
 							/>
 						</div>
 						<p>
-							{NAME_OVERRIDES[x.name] ? NAME_OVERRIDES[x.name] : x.name} <br />
+							{ARTIST_NAME_OVERRIDES[x.name]
+								? ARTIST_NAME_OVERRIDES[x.name]
+								: x.name}{' '}
+							<br />
 						</p>
 					</div>
 				))}
