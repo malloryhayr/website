@@ -222,6 +222,17 @@ export default function Age() {
 					</div>
 				</div>
 			</div>
+			<p
+				style={{
+					color: '#ab48ab',
+					textAlign: 'right',
+					width: '100%',
+					fontSize: '12px',
+					marginTop: '4px',
+				}}
+			>
+				Last updated <strong>{dayjs().format('ddd MMM DD YYYY HH:mm')}</strong>
+			</p>
 		</>
 	);
 }

@@ -4,6 +4,7 @@ import Age from './(age)/Age';
 import CodeDetailed, { CodeDetailedLoading } from './(code)/CodeDetailed';
 import CodeSummary, { CodeSummaryLoading } from './(code)/CodeSummary';
 import GamesSummary, { GamesSummaryLoading } from './(games)/GamesSummary';
+import MusicDetailed, { MusicDetailedLoading } from './(music)/MusicDetailed';
 import MusicSummary, { MusicSummaryLoading } from './(music)/MusicSummary';
 
 export const revalidate = 21600;
@@ -31,6 +32,12 @@ export default function Data() {
 				<Suspense fallback={<CodeDetailedLoading />}>
 					{/* @ts-expect-error Server Component */}
 					<CodeDetailed />
+				</Suspense>
+			</p>
+			<p>
+				<Suspense fallback={<MusicDetailedLoading />}>
+					{/* @ts-expect-error Server Component */}
+					<MusicDetailed />
 				</Suspense>
 			</p>
 		</>

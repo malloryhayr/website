@@ -14,11 +14,12 @@ export default async function CodeDetailed() {
 		<div>
 			<p>
 				<span style={{ color: '#ab48ab' }}>
-					{Math.floor(
-						stats.data.grand_total.total_seconds_including_other_language / 3600
+					{formatSeconds(
+						stats.data.grand_total.total_seconds_including_other_language,
+						{ compact: true }
 					)}
 				</span>{' '}
-				hours writing code (
+				writing code (
 				<span style={{ color: '#ab48ab' }}>
 					{formatSeconds(
 						stats.data.grand_total.daily_average_including_other_language,
@@ -36,6 +37,9 @@ export default async function CodeDetailed() {
 					{formatSeconds(stats.data.best_day.total_seconds, { compact: true })}
 				</span>
 				)
+			</p>
+			<p>
+				<strong>Top Languages</strong>
 			</p>
 			<div
 				style={{
@@ -81,7 +85,7 @@ export default async function CodeDetailed() {
 										width: `${x.percent}%`,
 										height: '100%',
 										backgroundColor: x.color,
-										marginRight: '0.25rem',
+										marginRight: '0.5rem',
 									}}
 								></div>
 								{formatSeconds(
@@ -98,10 +102,28 @@ export default async function CodeDetailed() {
 					);
 				})}
 			</div>
+			<p
+				style={{
+					color: '#ab48ab',
+					textAlign: 'right',
+					width: '100%',
+					fontSize: '12px',
+				}}
+			>
+				Fetched from{' '}
+				<a
+					href={`https://wakatime.com/@iGalaxy`}
+					target="_blank"
+					style={{ color: '#ab48ab' }}
+					className="external"
+				>
+					WakaTime
+				</a>
+			</p>
 		</div>
 	);
 }
 
 export function CodeDetailedLoading() {
-	return <span style={{ color: '#ab48ab' }}>(loading Wakatime data)</span>;
+	return <span style={{ color: '#ab48ab' }}>(loading WakaTime data)</span>;
 }

@@ -4,6 +4,9 @@ const nextConfig = {
 		appDir: true,
 	},
 	reactStrictMode: false,
+	images: {
+		domains: ['lastfm.freetls.fastly.net'],
+	},
 };
 
 module.exports = nextConfig;
