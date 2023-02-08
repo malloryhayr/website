@@ -1,3 +1,5 @@
+'use client';
+
 import dayjs from 'dayjs';
 
 import { BIRTHDAY } from '@/lib/constants';
@@ -51,7 +53,7 @@ export default function Age() {
 								{Array(52)
 									.fill(undefined)
 									.map((y, j) => (
-										<>
+										<div key={`year${i}-week${j}`}>
 											<div
 												style={{
 													height: '0.6rem',
@@ -64,7 +66,6 @@ export default function Age() {
 														? '#ffacff'
 														: 'rgb(171, 72, 171)',
 												}}
-												key={`year${i}-week${j}`}
 												id={`year${i}-week${j}`}
 											/>
 											{Object.keys(EVENTS).find(
@@ -88,7 +89,7 @@ export default function Age() {
 											) : (
 												<></>
 											)}
-										</>
+										</div>
 									))}
 							</div>
 						</div>
@@ -222,18 +223,6 @@ export default function Age() {
 					</div>
 				</div>
 			</div>
-			<p
-				style={{
-					color: '#ab48ab',
-					textAlign: 'right',
-					width: '100%',
-					fontSize: '12px',
-					marginTop: '4px',
-				}}
-			>
-				Last updated{' '}
-				<strong>{dayjs().format('ddd MMM DD YYYY HH:mm z')}</strong>
-			</p>
 		</>
 	);
 }
