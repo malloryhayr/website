@@ -91,7 +91,11 @@ export default async function CodeDetailed() {
 										?.total_seconds!,
 									{ compact: true }
 								)}{' '}
-								({stats.data.languages.find(y => y.name == x.name)?.percent}%)
+								(
+								{stats.data.languages
+									.find(y => y.name == x.name)
+									?.percent.toFixed(2)}
+								%)
 							</div>
 						</div>
 					);
@@ -154,7 +158,8 @@ export default async function CodeDetailed() {
 										marginRight: '0.5rem',
 									}}
 								></div>
-								{formatSeconds(x.total_seconds, { compact: true })} ({x.percent}
+								{formatSeconds(x.total_seconds, { compact: true })} (
+								{x.percent.toFixed(2)}
 								%)
 							</div>
 						</div>
