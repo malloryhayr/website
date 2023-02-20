@@ -31,7 +31,11 @@ export default function Home() {
 				<a href="https://mastodon.lol/@igalaxy" target="_blank">
 					@igalaxy@mastodon.lol
 				</a>{' '}
-				on the fediverse, and @iGalaxy#2018 on Discord.
+				on the fediverse, and{' '}
+				<a href="https://discord.gg/9taRw3PyKn" target="_blank">
+					@iGalaxy#2018
+				</a>{' '}
+				on Discord.
 			</p>
 			<OnlineStatus />
 		</>
