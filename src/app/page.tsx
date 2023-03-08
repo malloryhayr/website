@@ -28,8 +28,8 @@ export default function Home() {
 					@_iGalaxyYT
 				</a>{' '}
 				on Twitter,{' '}
-				<a href="https://mastodon.lol/@igalaxy" target="_blank">
-					@igalaxy@mastodon.lol
+				<a href="https://tech.lgbt/@igalaxy" target="_blank" rel="me">
+					@igalaxy@tech.lgbt
 				</a>{' '}
 				on the fediverse, and{' '}
 				<a href="https://discord.gg/9taRw3PyKn" target="_blank">
