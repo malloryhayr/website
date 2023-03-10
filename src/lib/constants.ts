@@ -1,1 +1,1 @@
-export const BIRTHDAY = '2005-03-13';
+export const BIRTHDAY = 'Sunday, March 13, 2005 8:00:00 AM';

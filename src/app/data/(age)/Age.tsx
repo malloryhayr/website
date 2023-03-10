@@ -1,15 +1,15 @@
 'use client';
 
 import dayjs from 'dayjs';
+import isLeapYear from 'dayjs/plugin/isLeapYear';
+import isoWeeksInYear from 'dayjs/plugin/isoWeeksInYear';
 
 import { BIRTHDAY } from '@/lib/constants';
 import AgeTooltip from './AgeTooltip';
-
-const EVENTS = {
-	// '2005-03-13': 'I was born.',
-};
-
 export default function Age() {
+	dayjs.extend(isoWeeksInYear);
+	dayjs.extend(isLeapYear);
+
 	const weeksAlive = dayjs().diff(dayjs(BIRTHDAY), 'weeks');
 	const yearsAlive = dayjs().diff(dayjs(BIRTHDAY), 'years');
 	const yearsAliveDisplay = dayjs()
@@ -23,7 +23,7 @@ export default function Age() {
 				alive (<span style={{ color: '#ab48ab' }}>{weeksAlive}</span> weeks)
 			</p>
 			<div>
-				{Array(Math.floor(weeksAlive / 52))
+				{Array(yearsAlive)
 					.fill(undefined)
 					.map((x, i) => (
 						<div
@@ -42,53 +42,30 @@ export default function Age() {
 							</span>
 							<div
 								style={{
-									height: '0.6rem',
-									width: 'calc(52*0.6rem + 51*0.3rem)',
+									height: '0.55rem',
+									width: `calc(${dayjs(
+										`${2005 + i}-03-13`
+									).isoWeeksInYear()}*0.55rem + ${
+										dayjs(`${2005 + i}-03-13`).isoWeeksInYear() - 1
+									}*0.26rem)`,
 									marginBottom: '0.3rem',
 									display: 'flex',
 									justifyContent: 'space-between',
 									marginLeft: '2rem',
 								}}
 							>
-								{Array(52)
+								{Array(dayjs(`${2005 + i}-03-13`).isoWeeksInYear())
 									.fill(undefined)
 									.map((y, j) => (
 										<div key={`year${i}-week${j}`}>
 											<div
 												style={{
-													height: '0.6rem',
-													width: '0.6rem',
-													backgroundColor: Object.keys(EVENTS).find(
-														x =>
-															weeksAlive + dayjs(x).diff(dayjs(), 'weeks') ==
-															j + i * 52
-													)
-														? '#ffacff'
-														: 'rgb(171, 72, 171)',
+													height: '0.55rem',
+													width: '0.55rem',
+													backgroundColor: 'rgb(171, 72, 171)',
 												}}
 												id={`year${i}-week${j}`}
 											/>
-											{Object.keys(EVENTS).find(
-												x =>
-													weeksAlive + dayjs(x).diff(dayjs(), 'weeks') ==
-													j + i * 52
-											) ? (
-												<AgeTooltip id={`year${i}-week${j}`}>
-													<strong>Week {j + 1 + i * 52}</strong> <br />
-													{
-														EVENTS[
-															Object.keys(EVENTS).find(
-																x =>
-																	weeksAlive +
-																		dayjs(x).diff(dayjs(), 'weeks') ==
-																	j + i * 52
-															) as keyof typeof EVENTS
-														]
-													}
-												</AgeTooltip>
-											) : (
-												<></>
-											)}
 										</div>
 									))}
 							</div>
@@ -107,34 +84,34 @@ export default function Age() {
 					</span>
 					<div
 						style={{
-							height: '0.6rem',
-							width: 'calc(52*0.6rem + 51*0.3rem)',
-							marginBottom: '0.3rem',
+							height: '0.55rem',
+							width: 'calc(52*0.55rem + 51*0.26rem)',
+							marginBottom: '0.26rem',
 							display: 'flex',
 							justifyContent: 'space-between',
 							marginLeft: '2rem',
 						}}
 						key={`year${yearsAlive}`}
 					>
-						{Array(weeksAlive % 52)
+						{Array(dayjs().diff(dayjs('2022-03-13'), 'weeks'))
 							.fill(undefined)
 							.map((y, j) => (
 								<div
 									style={{
-										height: '0.6rem',
-										width: '0.6rem',
+										height: '0.55rem',
+										width: '0.55rem',
 										backgroundColor:
-											j + 1 + yearsAlive * 52 == weeksAlive
+											Array(dayjs().diff(dayjs('2022-03-13'), 'weeks')).fill(
+												undefined
+											).length ==
+											j + 1
 												? '#ffffff00'
-												: Object.keys(EVENTS).find(
-														x =>
-															weeksAlive + dayjs(x).diff(dayjs(), 'weeks') ==
-															j + yearsAlive * 52
-												  )
-												? '#ffacff'
 												: 'rgb(171, 72, 171)',
 										boxShadow:
-											j + 1 + yearsAlive * 52 == weeksAlive
+											Array(dayjs().diff(dayjs('2022-03-13'), 'weeks')).fill(
+												undefined
+											).length ==
+											j + 1
 												? '0px 0px 0px 1px #ffacff inset'
 												: 'none',
 										display: 'flex',
@@ -144,7 +121,10 @@ export default function Age() {
 									key={`year${yearsAlive}-week${j}`}
 									id={`year${yearsAlive}-week${j}`}
 								>
-									{j + 1 + yearsAlive * 52 == weeksAlive ? (
+									{Array(dayjs().diff(dayjs('2022-03-13'), 'weeks')).fill(
+										undefined
+									).length ==
+									j + 1 ? (
 										<>
 											<div
 												style={{
@@ -168,7 +148,16 @@ export default function Age() {
 												></div>
 											</div>
 											<AgeTooltip id={`year${yearsAlive}-week${j}`}>
-												<strong>Week {j + 1 + yearsAlive * 52}</strong> <br />
+												<strong>
+													Week{' '}
+													{j +
+														1 +
+														yearsAlive *
+															dayjs(
+																`${2005 + yearsAlive}-03-13`
+															).isoWeeksInYear()}
+												</strong>{' '}
+												<br />
 												<span>
 													This week.{' '}
 													<span style={{ color: 'rgb(171, 72, 171)' }}>
@@ -186,38 +175,23 @@ export default function Age() {
 									) : (
 										<></>
 									)}
-									{Object.keys(EVENTS).find(
-										x =>
-											weeksAlive + dayjs(x).diff(dayjs(), 'weeks') ==
-											j + yearsAlive * 52
-									) ? (
-										<AgeTooltip id={`year${yearsAlive}-week${j}`}>
-											<strong>Week {j + 1 + yearsAlive * 52}</strong> <br />
-											{
-												EVENTS[
-													Object.keys(EVENTS).find(
-														x =>
-															weeksAlive + dayjs(x).diff(dayjs(), 'weeks') ==
-															j + yearsAlive * 52
-													) as keyof typeof EVENTS
-												]
-											}
-										</AgeTooltip>
-									) : (
-										<></>
-									)}
 								</div>
 							))}
-						{Array(52 - (weeksAlive % 52))
+						{Array(
+							dayjs(`${2005 + yearsAlive}-03-13`).isoWeeksInYear() -
+								dayjs().diff(dayjs('2022-03-13'), 'weeks')
+						)
 							.fill(undefined)
 							.map((y, j) => (
 								<div
 									style={{
-										height: '0.6rem',
-										width: '0.6rem',
+										height: '0.55rem',
+										width: '0.55rem',
 										boxShadow: '0px 0px 0px 1px rgb(171, 72, 171) inset',
 									}}
-									key={`year${yearsAlive}-week${(weeksAlive % 52) + j}`}
+									key={`year${yearsAlive}-week${
+										dayjs().diff(dayjs('2022-03-13'), 'weeks') + j
+									}`}
 								/>
 							))}
 					</div>
