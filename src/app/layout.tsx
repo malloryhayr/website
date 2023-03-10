@@ -10,6 +10,8 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
+import isLeapYear from 'dayjs/plugin/isLeapYear';
+import isoWeeksInYear from 'dayjs/plugin/isoWeeksInYear';
 
 export default function RootLayout({
 	children,
@@ -19,6 +21,8 @@ export default function RootLayout({
 	dayjs.extend(duration);
 	dayjs.extend(timezone);
 	dayjs.extend(advancedFormat);
+	dayjs.extend(isoWeeksInYear);
+	dayjs.extend(isLeapYear);
 
 	return (
 		<html lang="en">
