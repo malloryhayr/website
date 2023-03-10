@@ -91,7 +91,7 @@ export async function getWakatimeStatsAllTime(): Promise<WakatimeStatsAllTimeRes
 
 export async function getWakatimeLanguagesAllTime(): Promise<WakatimeLanguagesAllTimeResponse> {
 	let res = await fetch(
-		`https://wakatime.com/share/@iGalaxy/b8841fb0-94ff-4d39-b281-276b7ba55131.json`,
+		`https://wakatime.com/share/@iGalaxy/00ef4d1a-b3fc-4416-b507-9327d8f8d6f0.json`,
 		{ next: { revalidate: 21600 } }
 	);
 
