@@ -1,14 +1,15 @@
 'use client';
 
 import dayjs from 'dayjs';
-// import isLeapYear from 'dayjs/plugin/isLeapYear';
-// import isoWeeksInYear from 'dayjs/plugin/isoWeeksInYear';
+import isLeapYear from 'dayjs/plugin/isLeapYear';
+import isoWeeksInYear from 'dayjs/plugin/isoWeeksInYear';
 
 import { BIRTHDAY } from '@/lib/constants';
 import AgeTooltip from './AgeTooltip';
+
 export default function Age() {
-	// dayjs.extend(isoWeeksInYear);
-	// dayjs.extend(isLeapYear);
+	dayjs.extend(isoWeeksInYear);
+	dayjs.extend(isLeapYear);
 
 	const weeksAlive = dayjs().diff(dayjs(BIRTHDAY), 'weeks');
 	const yearsAlive = dayjs().diff(dayjs(BIRTHDAY), 'years');
