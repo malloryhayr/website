@@ -14,7 +14,7 @@ export default function Data() {
 				This page is a summary of the data I've collected about my life since
 				2020.
 			</p>
-			<Age />
+			{/* <Age /> */}
 			{/* <p>
 				During that time,{' '}
 				<Suspense fallback={<CodeSummaryLoading />}>
