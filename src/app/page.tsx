@@ -33,7 +33,7 @@ export default function Home() {
 				</a>{' '}
 				on the fediverse, and{' '}
 				<a href="https://discord.gg/9taRw3PyKn" target="_blank">
-					@iGalaxy#2018
+					@igalaxy
 				</a>{' '}
 				on Discord.
 			</p>
