@@ -10,6 +10,7 @@ export default function Home() {
 			<p>
 				Hi, I'm <strong>Mallory</strong>{' '}
 				<Suspense fallback={<GenericLoading />}>
+					{/* @ts-ignore */}
 					<Pronouns />
 				</Suspense>
 			</p>
