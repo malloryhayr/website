@@ -1,35 +1,20 @@
-const PRONOUNS = {
-	unspecified: 'unspecified',
-	hh: 'he/him',
-	hi: 'he/it',
-	hs: 'he/she',
-	ht: 'he/they',
-	ih: 'it/him',
-	ii: 'it/its',
-	is: 'it/she',
-	it: 'it/they',
-	shh: 'she/he',
-	sh: 'she/her',
-	si: 'she/it',
-	st: 'she/they',
-	th: 'they/he',
-	ti: 'they/it',
-	ts: 'they/she',
-	tt: 'they/them',
-	any: 'any',
-	other: 'other',
-	ask: 'ask',
-	avoid: 'avoid',
+type PronounsResponse = {
+	id: string;
+	sets: {
+		[locale: string]: string[];
+	};
 };
 
 export default async function Pronouns() {
-	const data: { pronouns: keyof typeof PRONOUNS } = await (
-		await fetch(
-			'https://pronoundb.org/api/v1/lookup?platform=discord&id=182292736790102017'
-		)
+	const data: PronounsResponse = await (
+		await fetch('https://pronoundb.org/api/v2/users/60aede5de69d97250e42c78c')
 	).json();
 
-	return <span style={{ color: '#ab48ab' }}>({PRONOUNS[data.pronouns]})</span>;
+	return (
+		<span style={{ color: '#ab48ab' }}>
+			({data.sets['en'].slice(0, 2).join('/')})
+		</span>
+	);
 }
 
 export function PronounsLoading() {
