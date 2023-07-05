@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Suspense } from 'react';
 
 import Age from './(age)/Age';
@@ -31,19 +33,16 @@ export default function Data() {
 			</p> */}
 			<p>
 				<Suspense fallback={<CodeDetailedLoading />}>
-					{/* @ts-expect-error Server Component */}
 					<CodeDetailed />
 				</Suspense>
 			</p>
 			<p>
 				<Suspense fallback={<MusicDetailedLoading />}>
-					{/* @ts-expect-error Server Component */}
 					<MusicDetailed />
 				</Suspense>
 			</p>
 			<p>
 				<Suspense fallback={<GamesDetailedLoading />}>
-					{/* @ts-expect-error Server Component */}
 					<GamesDetailed />
 				</Suspense>
 			</p>
