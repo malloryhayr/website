@@ -1,8 +1,4 @@
-import { headers } from 'next/headers';
-
 export default function Head() {
-	const headersList = headers();
-
 	const description = `Mallory — trans software engineer, game designer, & creator`;
 
 	return (
@@ -15,7 +11,7 @@ export default function Head() {
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="https://igalaxy.dev" />
 			<meta property="twitter:url" content="https://igalaxy.dev" />
-			<title>{headersList.get('host')}</title>
+			<title>igalaxy.dev</title>
 
 			<meta name="description" content={description} />
 			<meta property="og:description" content={description} />
