@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	const hostname = headersList.get('host')!;
 
 	const title = "mallory's observatory 🔭";
-	const description = `trans, student, software engineer, aspiring physicist + astronomer, & Minecraft enthusiast`;
+	const description = `trans, student, software engineer, aspiring physicist & astronomer, Minecraft enthusiast`;
 
 	return {
 		metadataBase: new URL(`https://${hostname}`),
