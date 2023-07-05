@@ -9,7 +9,7 @@ export default function Projects() {
 		<>
 			<p>Here's some cool stuff I've built/worked on:</p>
 			<Suspense fallback={<ProjectsLoading />}>
-				{/* @ts-expect-error Server Component */}
+				{/* @ts-ignore */}
 				<ProjectsList />
 			</Suspense>
 			<p>
