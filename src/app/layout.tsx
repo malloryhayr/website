@@ -67,6 +67,6 @@ export async function generateMetadata(): Promise<Metadata> {
 				url: 'https://igalaxy.dev',
 			},
 		],
-		themeColor: '#0A000A',
+		themeColor: '#4866ab',
 	};
 }
