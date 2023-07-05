@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export default function Home() {
 	return (
-		<main>
-			<a href="https://igalaxy.dev">test</a>
-		</main>
+		<>
+			<Link href="/test">test</Link>
+		</>
 	);
 }

@@ -19,7 +19,7 @@ export default function RootLayout({
 		<html lang="en" className={jetbrainsMono.className}>
 			<body>
 				<nav>hello world</nav>
-				{children}
+				<main>{children}</main>
 			</body>
 		</html>
 	);
