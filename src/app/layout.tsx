@@ -1,4 +1,11 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { JetBrains_Mono } from 'next/font/google';
+
+const jetbrainsMono = JetBrains_Mono({
+	subsets: ['latin', 'latin-ext'],
+	display: 'swap',
+});
+
+import { Metadata } from 'next';
 import { headers } from 'next/headers';
 
 import './global.scss';
@@ -9,8 +16,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body>{children}</body>
+		<html lang="en" className={jetbrainsMono.className}>
+			<body>
+				<nav>hello world</nav>
+				{children}
+			</body>
 		</html>
 	);
 }
