@@ -15,13 +15,7 @@ export default function RootLayout({
 	);
 }
 
-export async function generateMetadata(
-	props: {
-		params: { id: string };
-		searchParams: { [key: string]: string | string[] | undefined };
-	},
-	parent?: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
 	const headersList = headers();
 	const hostname = headersList.get('host')!;
 
