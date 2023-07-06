@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 
 import Pronouns, { PronounsLoading } from './Pronouns';
-import Discord, { DiscordLoading } from './Discord';
+import Discord from './Discord';
 
 export default function Home() {
 	return (
