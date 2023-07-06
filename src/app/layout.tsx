@@ -26,7 +26,7 @@ export default function RootLayout({
 				<nav>
 					<div>
 						<Image src={Logo} width={32} height={32} alt="icon" />
-						<p>mallory's observatory</p>
+						<p>Mallory's observatory</p>
 					</div>
 					<ul>
 						<NavLink route="" first />
@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	const headersList = headers();
 	const hostname = headersList.get('host')!;
 
-	const title = "mallory's observatory";
+	const title = "Mallory's observatory";
 	const description = `trans, student, software engineer, aspiring physicist & astronomer, Minecraft enthusiast`;
 
 	return {

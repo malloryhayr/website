@@ -44,7 +44,7 @@ a {
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 690px) {
 	nav {
 		flex-direction: column;
 		max-width: calc(100vw - 30px);
@@ -107,6 +107,20 @@ nav {
 main {
 	max-width: 630px;
 	margin: auto;
+
+	p {
+		margin-top: 10px;
+
+		line-height: 1.5;
+
+		sup {
+			color: var(--color-secondary);
+		}
+
+		i {
+			color: var(--color-secondary);
+		}
+	}
 }
 
 .navLink {
