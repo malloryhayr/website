@@ -32,6 +32,7 @@ export default function RootLayout({
 						<NavLink route="" first />
 						<NavLink route="data" />
 						<NavLink route="projects" />
+						<NavLink route="videos" />
 						<NavLink route="blog" />
 					</ul>
 				</nav>
