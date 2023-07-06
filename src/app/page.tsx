@@ -2,8 +2,8 @@ import { Suspense } from 'react';
 
 import Link from 'next/link';
 
-import Pronouns, { PronounsLoading } from './Pronouns';
-import Discord from './Discord';
+import Pronouns, { PronounsLoading } from './(components)/Pronouns';
+import Discord from './(components)/Discord';
 
 export default function Home() {
 	return (
@@ -34,7 +34,11 @@ export default function Home() {
 				<Link href={'https://twitter.com/@_iGalaxyYT'} target="_blank">
 					@_iGalaxyYT
 				</Link>{' '}
-				on twitter, and{' '}
+				on twitter,{' '}
+				<Link href={'https://youtube.com/@iGalaxy_'} target="_blank">
+					@iGalaxy_
+				</Link>{' '}
+				on youtube, and{' '}
 				<Link href={'https://discord.gg/9taRw3PyKn'} target="_blank">
 					@igalaxy
 				</Link>{' '}

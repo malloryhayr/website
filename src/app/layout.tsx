@@ -8,9 +8,9 @@ const jetbrainsMono = JetBrains_Mono({
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
 
-import './global.scss';
+import './(style)/global.scss';
 
-import NavLink from './NavLink';
+import NavLink from './(components)/NavLink';
 import Image from 'next/image';
 
 import Logo from './apple-icon.png';
