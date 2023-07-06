@@ -44,6 +44,20 @@ a {
 	}
 }
 
+@media screen and (max-width: 500px) {
+	nav {
+		flex-direction: column;
+		max-width: calc(100vw - 30px);
+		padding: 0;
+	}
+
+	main {
+		padding-left: 15px;
+		padding-right: 15px;
+		max-width: calc(100vw - 30px);
+	}
+}
+
 nav {
 	max-width: 630px;
 
