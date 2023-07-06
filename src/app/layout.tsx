@@ -24,8 +24,10 @@ export default function RootLayout({
 		<html lang="en" className={jetbrainsMono.className}>
 			<body>
 				<nav>
-					<Image src={Logo} width={32} height={32} alt="icon" />
-					<p>mallory's observatory</p>
+					<div>
+						<Image src={Logo} width={32} height={32} alt="icon" />
+						<p>mallory's observatory</p>
+					</div>
 					<ul>
 						<NavLink route="" first />
 						<NavLink route="data" />
