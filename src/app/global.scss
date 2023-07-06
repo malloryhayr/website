@@ -46,12 +46,50 @@ a {
 
 nav {
 	max-width: 630px;
+
 	padding-top: 45px;
-	padding-bottom: 45px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
 	margin: auto;
+
+	border-bottom: 4px solid var(--color-secondary);
+	margin-bottom: 30px;
+
+	display: flex;
+	align-items: center;
+
+	img {
+		margin-right: 8px;
+	}
+
+	p {
+		margin-right: 24px;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		align-items: center;
+
+		li {
+			padding-right: 16px;
+			padding-left: 16px;
+			border-left: 2px solid var(--color-primary);
+			height: 24px;
+			display: flex;
+			align-items: center;
+		}
+	}
 }
 
 main {
 	max-width: 630px;
 	margin: auto;
+}
+
+.navLink {
+	&.active {
+		text-decoration: none;
+	}
 }

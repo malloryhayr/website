@@ -10,6 +10,11 @@ import { headers } from 'next/headers';
 
 import './global.scss';
 
+import NavLink from './NavLink';
+import Image from 'next/image';
+
+import Logo from './apple-icon.png';
+
 export default function RootLayout({
 	children,
 }: {
@@ -18,7 +23,16 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={jetbrainsMono.className}>
 			<body>
-				<nav>hello world</nav>
+				<nav>
+					<Image src={Logo} width={32} height={32} alt="icon" />
+					<p>mallory's observatory</p>
+					<ul>
+						<NavLink route="" first />
+						<NavLink route="data" />
+						<NavLink route="projects" />
+						<NavLink route="blog" />
+					</ul>
+				</nav>
 				<main>{children}</main>
 			</body>
 		</html>
