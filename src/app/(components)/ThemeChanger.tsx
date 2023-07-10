@@ -16,7 +16,8 @@ export default function ThemeChanger() {
 		setMounted(true);
 	}, []);
 
-	if (!mounted) return null;
+	if (!mounted)
+		return <Image src={Logo} width={32} height={32} alt="icon" id="logo" />;
 
 	const themes = [
 		'red',
