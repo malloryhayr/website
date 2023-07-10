@@ -11,9 +11,8 @@ import { headers } from 'next/headers';
 import './(style)/global.scss';
 
 import NavLink from './(components)/NavLink';
-import Image from 'next/image';
-
-import Logo from './apple-icon.png';
+import ThemeChanger from './(components)/ThemeChanger';
+import { Providers } from './providers';
 
 export default function RootLayout({
 	children,
@@ -21,22 +20,29 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className={jetbrainsMono.className}>
+		<html
+			lang="en"
+			className={jetbrainsMono.className}
+			suppressHydrationWarning
+		>
+			<head />
 			<body>
-				<nav>
-					<div>
-						<Image src={Logo} width={32} height={32} alt="icon" />
-						<p>Mallory's observatory</p>
-					</div>
-					<ul>
-						<NavLink route="" first />
-						<NavLink route="data" />
-						<NavLink route="projects" />
-						<NavLink route="videos" />
-						<NavLink route="blog" />
-					</ul>
-				</nav>
-				<main>{children}</main>
+				<Providers>
+					<nav>
+						<div>
+							<ThemeChanger />
+							<p>Mallory's observatory</p>
+						</div>
+						<ul>
+							<NavLink route="" first />
+							<NavLink route="data" />
+							<NavLink route="projects" />
+							<NavLink route="videos" />
+							<NavLink route="blog" />
+						</ul>
+					</nav>
+					<main>{children}</main>
+				</Providers>
 			</body>
 		</html>
 	);

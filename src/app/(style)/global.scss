@@ -1,8 +1,107 @@
+// @property --color-bg {
+// 	syntax: '<color>';
+// 	initial-value: #00030a;
+// 	inherits: true;
+// }
+
+// @property --color-primary {
+// 	syntax: '<color>';
+// 	initial-value: #acc8ff;
+// 	inherits: true;
+// }
+
+// @property --color-secondary {
+// 	syntax: '<color>';
+// 	initial-value: #4866ab;
+// 	inherits: true;
+// }
+
 :root {
 	--color-bg: #00030a;
 	--color-primary: #acc8ff;
 	--color-secondary: #4866ab;
+	--logo-hue: 0deg;
 }
+
+[data-theme='purple'] {
+	--color-bg: #0a000a;
+	--color-primary: #ffacff;
+	--color-secondary: #ab48ab;
+	--logo-hue: 45deg;
+}
+
+[data-theme='red'] {
+	--color-bg: #0a0000;
+	--color-primary: #ff7070;
+	--color-secondary: #a62929;
+	--logo-hue: 90deg;
+}
+
+[data-theme='orange'] {
+	--color-bg: #0a0500;
+	--color-primary: #ff9742;
+	--color-secondary: #bd5b0b;
+	--logo-hue: 135deg;
+}
+
+[data-theme='yellow'] {
+	--color-bg: #0a0900;
+	--color-primary: #ffcf7d;
+	--color-secondary: #d6992f;
+	--logo-hue: 180deg;
+}
+
+[data-theme='green'] {
+	--color-bg: #010a00;
+	--color-primary: #b2ffac;
+	--color-secondary: #48ab4b;
+	--logo-hue: 225deg;
+}
+
+// @keyframes rainbow {
+// 	0% {
+// 		--color-bg: #0a0000;
+// 		--color-primary: #ff7070;
+// 		--color-secondary: #a62929;
+// 	}
+// 	16% {
+// 		--color-bg: #0a0500;
+// 		--color-primary: #ff9742;
+// 		--color-secondary: #bd5b0b;
+// 	}
+// 	33% {
+// 		--color-bg: #0a0900;
+// 		--color-primary: #ffcf7d;
+// 		--color-secondary: #d6992f;
+// 	}
+// 	50% {
+// 		--color-bg: #010a00;
+// 		--color-primary: #b2ffac;
+// 		--color-secondary: #48ab4b;
+// 	}
+// 	66% {
+// 		--color-bg: #00030a;
+// 		--color-primary: #acc8ff;
+// 		--color-secondary: #4866ab;
+// 	}
+// 	83% {
+// 		--color-bg: #0a000a;
+// 		--color-primary: #ffacff;
+// 		--color-secondary: #ab48ab;
+// 	}
+// 	100% {
+// 		--color-bg: #0a0000;
+// 		--color-primary: #ff7070;
+// 		--color-secondary: #a62929;
+// 	}
+// }
+
+// [data-theme='rainbow'] {
+// 	--color-bg: #0a0000;
+// 	--color-primary: #ff7070;
+// 	--color-secondary: #a62929;
+// 	animation: 2s rainbow linear infinite;
+// }
 
 html,
 body,
@@ -30,6 +129,18 @@ body {
 			url('/assets/cursor/smg_cursor_hand.svg')
 			url('/assets/cursor/smg_cursor_grab.svg');
 	}
+}
+
+#logo {
+	&:hover {
+		cursor: url('/assets/cursor/smg_cursor_hand.svg') 2 2, auto;
+	}
+
+	&.clicked {
+		cursor: url('/assets/cursor/smg_cursor_grab.svg') 2 2, auto;
+	}
+
+	filter: hue-rotate(var(--logo-hue));
 }
 
 a {
