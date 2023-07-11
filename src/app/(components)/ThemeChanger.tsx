@@ -44,7 +44,9 @@ export default function ThemeChanger() {
 			width={32}
 			height={32}
 			alt="icon"
-			onClick={() => setTheme(themes[getNextTheme()])}
+			onClick={(e: React.MouseEvent<HTMLImageElement>) =>
+				setTheme(e.shiftKey ? 'blue' : themes[getNextTheme()])
+			}
 			onMouseDown={() => setClicked(true)}
 			onMouseUp={() => setClicked(false)}
 			onMouseLeave={() => setClicked(false)}

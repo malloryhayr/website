@@ -114,6 +114,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	background: var(--color-bg);
+	transition: color 0.15s, background 0.15s;
 	color: var(--color-primary);
 	font-size: 14px;
 
@@ -140,10 +141,12 @@ body {
 		cursor: url('/assets/cursor/smg_cursor_grab.svg') 2 2, auto;
 	}
 
+	transition: filter 0.15s;
 	filter: hue-rotate(var(--logo-hue));
 }
 
 a {
+	transition: color 0.15s;
 	color: var(--color-primary);
 
 	&:hover {
@@ -178,6 +181,7 @@ nav {
 	padding-right: 30px;
 	margin: auto;
 
+	transition: border-bottom 0.15s;
 	border-bottom: 2px solid var(--color-secondary);
 	margin-bottom: 15px;
 
@@ -207,6 +211,7 @@ nav {
 		li {
 			padding-right: 16px;
 			padding-left: 16px;
+			transition: border-left 0.15s;
 			border-left: 2px solid var(--color-primary);
 			height: 24px;
 			display: flex;
@@ -225,10 +230,12 @@ main {
 		line-height: 1.5;
 
 		sup {
+			transition: color 0.15s;
 			color: var(--color-secondary);
 		}
 
 		i {
+			transition: color 0.15s;
 			color: var(--color-secondary);
 		}
 	}
