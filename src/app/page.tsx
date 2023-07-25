@@ -32,8 +32,8 @@ export default function Home() {
 					@igalaxy
 				</a>{' '}
 				on Discord,{' '}
-				<a href="https://tech.lgbt/@igalaxy" target="_blank" rel="me">
-					@igalaxy@tech.lgbt
+				<a href="https://farlands.cafe/@igalaxy" target="_blank" rel="me">
+					@igalaxy@farlands.cafe
 				</a>{' '}
 				on the fediverse, and{' '}
 				<a href="https://cohost.org/igalaxy" target="_blank">
