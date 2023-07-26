@@ -20,26 +20,26 @@ export default function Home() {
 			</p>
 			<p>
 				i help with community management over at{' '}
-				<Link href={'https://existencesmp.com'} target="_blank">
+				<Link href={'https://existencesmp.com/'} target="_blank">
 					existence smp
 				</Link>{' '}
 				<i>& a private community of friends called the mafia</i>
 			</p>
 			<p>
 				you can find me at{' '}
-				<Link href={'https://github.com/iGalaxyYT'} target="_blank">
+				<Link href={'https://github.com/iGalaxyYT/'} target="_blank">
 					iGalaxyYT
 				</Link>{' '}
 				on github,{' '}
-				<Link href={'https://twitter.com/@_iGalaxyYT'} target="_blank">
+				<Link href={'https://twitter.com/@_iGalaxyYT/'} target="_blank">
 					@_iGalaxyYT
 				</Link>{' '}
 				on twitter,{' '}
-				<Link href={'https://youtube.com/@iGalaxy_'} target="_blank">
+				<Link href={'https://youtube.com/@iGalaxy_/'} target="_blank">
 					@iGalaxy_
 				</Link>{' '}
 				on youtube, and{' '}
-				<Link href={'https://discord.gg/9taRw3PyKn'} target="_blank">
+				<Link href={'https://discord.gg/9taRw3PyKn/'} target="_blank">
 					@igalaxy
 				</Link>{' '}
 				on discord.
@@ -47,11 +47,11 @@ export default function Home() {
 			<Discord />
 			<p>
 				i'm also{' '}
-				<Link href={'https://tech.lgbt/@igalaxy'} target="_blank" rel="me">
-					@igalaxy@tech.lgbt
+				<Link href={'https://farlands.cafe/@igalaxy/'} target="_blank" rel="me">
+					@igalaxy@farlands.cafe
 				</Link>{' '}
 				on mastodon and{' '}
-				<Link href="https://cohost.org/igalaxy" target="_blank">
+				<Link href="https://cohost.org/igalaxy/" target="_blank">
 					@igalaxy
 				</Link>{' '}
 				on cohost, but i don't particularly use those platforms.{' '}
