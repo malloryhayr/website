@@ -35,7 +35,7 @@ export default function RootLayout({
 						</div>
 						<ul>
 							<NavLink route="" first />
-							<NavLink route="data" />
+							<NavLink route="shelf" />
 							<NavLink route="projects" />
 							<NavLink route="videos" />
 							<NavLink route="blog" />
