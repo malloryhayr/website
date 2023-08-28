@@ -1,9 +1,22 @@
 type PronounsResponse = {
 	id: string;
 	sets: {
-		[locale: string]: string[];
+		[locale: string]: PronounSetKey[];
 	};
 };
+
+const PronounSets = {
+	he: 'he/him',
+	it: 'it/its',
+	she: 'she/her',
+	they: 'they/them',
+	any: 'any',
+	ask: 'ask',
+	avoid: 'avoid',
+	other: 'other',
+};
+
+type PronounSetKey = keyof typeof PronounSets;
 
 export default async function Pronouns() {
 	const data: PronounsResponse = await (
@@ -12,7 +25,12 @@ export default async function Pronouns() {
 
 	return (
 		<span style={{ color: '#ab48ab' }}>
-			({data.sets['en'].slice(0, 2).join('/')})
+			(
+			{data.sets['en']
+				.slice(0, 2)
+				.map(x => PronounSets[x])
+				.join('/')}
+			)
 		</span>
 	);
 }
