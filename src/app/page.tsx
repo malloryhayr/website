@@ -15,8 +15,8 @@ export default function Home() {
 				</Suspense>
 			</p>
 			<p>
-				i'm a trans student, software engineer, game designer, & aspiring
-				physicist. i like doing funky stuff with Minecraft and the web
+				i'm a student, software engineer, game designer, & Minecraft enthusiast.
+				i like doing funky stuff with Minecraft and the web
 			</p>
 			<p>
 				i help with community management over at{' '}
@@ -31,6 +31,10 @@ export default function Home() {
 					iGalaxyYT
 				</Link>{' '}
 				on github,{' '}
+				<Link href={'https://farlands.cafe/@igalaxy/'} target="_blank">
+					@igalaxy@farlands.cafe
+				</Link>{' '}
+				on mastodon,{' '}
 				<Link href={'https://twitter.com/@_iGalaxyYT/'} target="_blank">
 					@_iGalaxyYT
 				</Link>{' '}
@@ -39,27 +43,15 @@ export default function Home() {
 					@iGalaxy_
 				</Link>{' '}
 				on youtube, and{' '}
-				<Link href={'https://discord.gg/9taRw3PyKn/'} target="_blank">
+				<Link
+					href={'https://discord.com/users/182292736790102017'}
+					target="_blank"
+				>
 					@igalaxy
 				</Link>{' '}
 				on discord.
 			</p>
 			<Discord />
-			<p>
-				i'm also{' '}
-				<Link href={'https://farlands.cafe/@igalaxy/'} target="_blank" rel="me">
-					@igalaxy@farlands.cafe
-				</Link>{' '}
-				on mastodon and{' '}
-				<Link href="https://cohost.org/igalaxy/" target="_blank">
-					@igalaxy
-				</Link>{' '}
-				on cohost, but i don't particularly use those platforms.{' '}
-				<i>
-					these accounts are just for the inevitable downfall of twitter dot com{' '}
-					{'<3'}
-				</i>
-			</p>
 		</>
 	);
 }
