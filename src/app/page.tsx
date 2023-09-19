@@ -27,8 +27,8 @@ export default function Home() {
 			</p>
 			<p>
 				you can find me at{' '}
-				<Link href={'https://github.com/iGalaxyYT/'} target="_blank">
-					iGalaxyYT
+				<Link href={'https://github.com/malloryhayr/'} target="_blank">
+					malloryhayr
 				</Link>{' '}
 				on github,{' '}
 				<Link href={'https://farlands.cafe/@igalaxy/'} target="_blank">
