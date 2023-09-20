@@ -47,7 +47,7 @@ function ProjectsFooter() {
 		>
 			Fetched from{' '}
 			<a
-				href={`https://github.com/iGalaxyYT`}
+				href={`https://github.com/malloryhayr`}
 				target="_blank"
 				style={{ color: '#ab48ab' }}
 				className="external"
