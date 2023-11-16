@@ -8,14 +8,15 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"react": "^18",
-		"react-dom": "^18",
-		"next": "13.5.4"
+		"next": "^14.0.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"typescript": "^5",
-		"@types/node": "^20",
-		"@types/react": "^18",
-		"@types/react-dom": "^18"
+		"@types/node": "^20.9.1",
+		"@types/react": "^18.2.37",
+		"@types/react-dom": "^18.2.15",
+		"sass": "^1.69.5",
+		"typescript": "^5.2.2"
 	}
 }

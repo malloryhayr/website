@@ -1,5 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
+
+import "./(style)/global.scss";
+import Navbar from "./(components)/Navbar";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const headersList = headers();
@@ -12,7 +15,6 @@ export async function generateMetadata(): Promise<Metadata> {
 		metadataBase: new URL(`https://${hostname}`),
 		title,
 		description,
-		viewport: { width: "device-width", initialScale: 1 },
 		openGraph: {
 			title,
 			description,
@@ -43,9 +45,14 @@ export async function generateMetadata(): Promise<Metadata> {
 				url: "https://mallory.rs",
 			},
 		],
-		themeColor: "#4866ab",
 	};
 }
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	themeColor: "#4866ab",
+};
 
 export default function RootLayout({
 	children,
@@ -54,7 +61,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<head />
+			<body>
+				<Navbar />
+				{children}
+			</body>
 		</html>
 	);
 }
