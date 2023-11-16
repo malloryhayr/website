@@ -30,6 +30,17 @@ body {
 	background: var(--color-bg);
 
 	cursor: url("/assets/cursor/smg_cursor_pointer.svg") 2 2, auto;
+
+	&::after {
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		z-index: -1;
+		content: url("/assets/cursor/smg_cursor_pointer.svg")
+			url("/assets/cursor/smg_cursor_hand.svg")
+			url("/assets/cursor/smg_cursor_grab.svg");
+	}
 }
 
 nav {
@@ -45,5 +56,28 @@ nav {
 
 	div {
 		width: 900px;
+
+		display: flex;
+		justify-content: space-between;
+
+		ul {
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+
+			li {
+				padding-left: 1em;
+			}
+		}
+	}
+}
+
+a {
+	&:hover {
+		cursor: url("/assets/cursor/smg_cursor_hand.svg") 2 2, auto;
+	}
+
+	&:focus {
+		cursor: url("/assets/cursor/smg_cursor_grab.svg") 2 2, auto;
 	}
 }
