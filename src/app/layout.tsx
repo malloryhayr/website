@@ -1,15 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 
+import { Rubik } from "next/font/google";
 import "./(style)/global.scss";
 import Navbar from "./(components)/Navbar";
+
+const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
 export async function generateMetadata(): Promise<Metadata> {
 	const headersList = headers();
 	const hostname = headersList.get("host")!;
 
 	const title = "Mallory's observatory";
-	const description = `student, software engineer, game designer, physics enjoyer, Minecraft enthusiast`;
+	const description = `student, computer scientist, game designer, Minecraft enthusiast`;
 
 	return {
 		metadataBase: new URL(`https://${hostname}`),
@@ -30,19 +33,14 @@ export async function generateMetadata(): Promise<Metadata> {
 			"iGalaxy",
 			"Mallory",
 			"Mallory Hayr",
-			"software engineer",
-			"game designer",
-			"creator",
 			"igalaxy.dev",
 			"mallory.rs",
 			"wii.mom",
-			"starship.mom",
-			"observatory.mom",
 		],
 		authors: [
 			{
 				name: "Mallory Hayr",
-				url: "https://mallory.rs",
+				url: "https://igalaxy.dev",
 			},
 		],
 	};
@@ -60,7 +58,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={rubik.className}>
 			<head />
 			<body>
 				<Navbar />
