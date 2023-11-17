@@ -1,14 +1,15 @@
+import Logo from "./Logo";
+import NavItems from "./NavItems";
+
 export default function Navbar() {
 	return (
 		<nav>
 			<div>
-				<h1>Mallory's observatory</h1>
-				<ul>
-					<li>home</li>
-					<li>shelf</li>
-					<li>projects</li>
-					<li>writing</li>
-				</ul>
+				<div>
+					<Logo />
+					<h1>Mallory's observatory</h1>
+				</div>
+				<NavItems />
 			</div>
 		</nav>
 	);

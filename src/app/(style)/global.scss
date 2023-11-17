@@ -1,16 +1,24 @@
 :root {
 	--color-bg: #00030a;
+	--color-bg-secondary: #262e40;
+	--color-bg-secondary-outline: #474d5c;
+
 	--color-header: #fff;
-	--color-primary: #acc8ff;
-	--color-secondary: #4866ab;
+	--color-header-secondary: #aaa;
+
+	--color-primary-light: #acc8ff;
+	--color-primary-dark: #4866ab;
 }
 
-[data-theme="light"] {
-	--color-bg: #fff;
-	--color-header: #00030a;
-	--color-primary: #4866ab;
-	--color-secondary: #acc8ff;
-}
+// [data-theme="light"] {
+// 	--color-bg: #fff;
+// 	--color-bg-secondary: #aaa;
+
+// 	--color-header: #00030a;
+
+// 	--color-primary-light: #4866ab;
+// 	--color-primary-dark: #acc8ff;
+// }
 
 html,
 body,
@@ -22,12 +30,17 @@ body,
 html {
 	width: 100vw;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 body {
 	width: 100vw;
 	height: 100%;
 	background: var(--color-bg);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 	cursor: url("/assets/cursor/smg_cursor_pointer.svg") 2 2, auto;
 
@@ -46,19 +59,117 @@ body {
 nav {
 	border-top: 1px solid var(--color-header);
 	border-bottom: 1px solid var(--color-bg);
-	background: linear-gradient(var(--color-primary), var(--color-secondary));
+	background: linear-gradient(
+		var(--color-primary-light),
+		var(--color-primary-dark)
+	);
 	color: var(--color-header);
 	display: flex;
 	justify-content: center;
 
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	height: 4em;
+
+	width: 100vw;
 
 	div {
-		width: 900px;
+		width: min(100vw, 900px);
 
 		display: flex;
 		justify-content: space-between;
+
+		div {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		ul {
+			list-style-type: none;
+			display: flex;
+
+			li {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				border-left: 1px solid transparent;
+				border-right: 1px solid transparent;
+
+				&:hover {
+					background: linear-gradient(
+						var(--color-primary-light),
+						var(--color-primary-dark),
+						var(--color-primary-dark)
+					);
+					border-left: 1px solid;
+					border-right: 1px solid;
+					border-image: linear-gradient(
+							to bottom,
+							transparent,
+							var(--color-primary-light),
+							transparent
+						)
+						1 100%;
+
+					.navItem {
+						border-left: 1px solid;
+						border-right: 1px solid;
+						border-image: linear-gradient(
+								to bottom,
+								transparent,
+								var(--color-primary-dark),
+								transparent
+							)
+							1 100%;
+					}
+				}
+
+				.navItem {
+					height: 100%;
+					display: flex;
+					padding-left: 1em;
+					padding-right: 1em;
+					align-items: center;
+					color: var(--color-header);
+					border-left: 1px solid transparent;
+					border-right: 1px solid transparent;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	margin-top: auto;
+	background: linear-gradient(
+		var(--color-bg-secondary-outline),
+		var(--color-bg-secondary)
+	);
+	border-top: 1px solid var(--color-bg-secondary-outline);
+	border-left: 1px solid var(--color-bg-secondary-outline);
+	border-right: 1px solid var(--color-bg-secondary-outline);
+
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+
+	width: min(100vw, calc(900px + 2em));
+	padding: 1em;
+	border-radius: 0.5em 0.5em 0 0;
+
+	color: var(--color-header-secondary);
+	min-height: 2em;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	div {
+		display: flex;
+		align-items: center;
+
+		h3 {
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
 
 		ul {
 			list-style-type: none;
@@ -66,7 +177,14 @@ nav {
 			align-items: center;
 
 			li {
-				padding-left: 1em;
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+				.navItem {
+					color: var(--color-header-secondary);
+				}
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -79,5 +197,22 @@ a {
 
 	&:focus {
 		cursor: url("/assets/cursor/smg_cursor_grab.svg") 2 2, auto;
+	}
+}
+
+.navItem {
+	text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+	nav {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+
+	footer {
+		border-radius: 0;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

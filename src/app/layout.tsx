@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { Rubik } from "next/font/google";
 import "./(style)/global.scss";
 import Navbar from "./(components)/Navbar";
+import Footer from "./(components)/Footer";
 
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
@@ -63,6 +64,7 @@ export default function RootLayout({
 			<body>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
