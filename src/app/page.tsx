@@ -13,7 +13,7 @@ export default function Home() {
 			<div style={{ width: "calc(600px - 0.625em)", marginRight: "1.25em" }}>
 				<main>
 					<h2>about me</h2>
-					<p>Hey! i'm Mallory</p>
+					<p>Hey! I'm Mallory</p>
 					<p>
 						I'm a student, computer scientist, game designer, & Minecraft
 						enthusiast. I make things, sometimes
