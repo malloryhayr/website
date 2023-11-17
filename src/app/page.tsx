@@ -91,7 +91,7 @@ export default function Home() {
 							style={{
 								width: "24px",
 								height: "24px",
-								background: "linear-gradient(#5489b4, #214c70)",
+								background: "linear-gradient(#214c70, #5489b4)",
 								marginRight: "0.25em",
 								borderRadius: "0.125em",
 							}}
