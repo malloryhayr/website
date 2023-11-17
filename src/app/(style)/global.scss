@@ -1,5 +1,5 @@
 :root {
-	--color-bg: #00030a;
+	--color-bg: #080b12;
 	--color-bg-secondary: #262e40;
 	--color-bg-secondary-outline: #474d5c;
 
@@ -57,8 +57,6 @@ body {
 }
 
 nav {
-	border-top: 1px solid var(--color-header);
-	border-bottom: 1px solid var(--color-bg);
 	background: linear-gradient(
 		var(--color-primary-light),
 		var(--color-primary-dark)
@@ -138,6 +136,41 @@ nav {
 	}
 }
 
+main {
+	background-color: #eee;
+	padding: 1.5em;
+	padding-top: 1em;
+	margin-top: 1.5em;
+	border-radius: 0.5em;
+	border: 1px solid #aaa;
+
+	color: var(--color-bg-secondary);
+
+	p {
+		margin-top: 0.5em;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--color-primary-dark);
+		&:hover {
+			text-decoration: underline;
+			text-decoration-style: wavy;
+			text-decoration-thickness: 1.25px;
+		}
+	}
+}
+
+::-moz-selection {
+	background-color: var(--color-primary-dark);
+	color: var(--color-header);
+}
+
+::selection {
+	background-color: var(--color-primary-dark);
+	color: var(--color-header);
+}
+
 footer {
 	margin-top: auto;
 	background: linear-gradient(
@@ -151,7 +184,7 @@ footer {
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
 
-	width: min(100vw, calc(900px + 2em));
+	width: min(100vw, 900px - 2em);
 	padding: 1em;
 	border-radius: 0.5em 0.5em 0 0;
 
