@@ -64,6 +64,11 @@ nav {
 	color: var(--color-header);
 	display: flex;
 	justify-content: center;
+	text-shadow: 0 1px 0 var(--color-bg-secondary);
+
+	img {
+		filter: drop-shadow(0 1px 0 var(--color-bg));
+	}
 
 	height: 4em;
 
@@ -190,6 +195,11 @@ footer {
 
 	color: var(--color-header-secondary);
 	min-height: 2em;
+	text-shadow: 0 1px 0 var(--color-bg);
+
+	svg {
+		filter: drop-shadow(0 1px 0 var(--color-bg));
+	}
 
 	display: flex;
 	align-items: center;
