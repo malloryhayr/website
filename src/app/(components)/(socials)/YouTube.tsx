@@ -14,7 +14,7 @@ export default async function YouTube() {
 			style={{
 				background: "linear-gradient(to bottom, #9b846d, #66472a)",
 				padding: "6px",
-				borderRadius: "2em",
+				borderRadius: "2.25em",
 				marginTop: "1em",
 			}}
 		>
@@ -22,7 +22,7 @@ export default async function YouTube() {
 				style={{
 					background: "linear-gradient(to bottom, #72491f, #896342)",
 					padding: "10px",
-					borderRadius: "2em",
+					borderRadius: "calc(2.25em - 6px)",
 				}}
 			>
 				<main
@@ -33,7 +33,7 @@ export default async function YouTube() {
 							"linear-gradient(to bottom, #705d34, 5%, #d6bf84, #f4e9ca)",
 						backgroundColor: "#EEE3C7",
 						color: "#3f3633",
-						borderRadius: "2em",
+						borderRadius: "calc(2.25em - 16px)",
 						border: 0,
 					}}
 					id="youtube"
