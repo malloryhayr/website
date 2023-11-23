@@ -7,7 +7,9 @@ import {
 	SiTumblr,
 } from "@icons-pack/react-simple-icons";
 
-export default function Home() {
+import YouTube from "./(components)/(socials)/YouTube";
+
+export default async function Home() {
 	return (
 		<div style={{ width: "min(900px, 100vw)", display: "flex" }}>
 			<div style={{ width: "calc(600px - 0.625em)", marginRight: "1.25em" }}>
@@ -30,26 +32,7 @@ export default function Home() {
 				<h2 style={{ color: "var(--color-header)", textAlign: "center" }}>
 					elsewhere on the web
 				</h2>
-				<main
-					style={{
-						marginTop: "1em",
-						padding: "0",
-						backgroundColor: "#ffc6c2",
-						borderColor: "#cc807a",
-						color: "#6b1c15",
-					}}
-				>
-					<h3
-						style={{
-							display: "inline-flex",
-							marginTop: "1em",
-							marginLeft: "1em",
-							marginRight: "1em",
-						}}
-					>
-						<SiYoutube style={{ marginRight: "0.25em" }} /> youtube
-					</h3>
-				</main>
+				<YouTube />
 				<main
 					style={{
 						marginTop: "1em",
@@ -62,7 +45,7 @@ export default function Home() {
 					<h3
 						style={{
 							display: "inline-flex",
-							marginTop: "1em",
+							marginTop: "0.9em",
 							marginLeft: "1em",
 							marginRight: "1em",
 						}}
@@ -82,7 +65,7 @@ export default function Home() {
 					<h3
 						style={{
 							display: "inline-flex",
-							marginTop: "1em",
+							marginTop: "0.9em",
 							marginLeft: "1em",
 							marginRight: "1em",
 						}}
@@ -109,7 +92,7 @@ export default function Home() {
 					<h3
 						style={{
 							display: "inline-flex",
-							marginTop: "1em",
+							marginTop: "0.9em",
 							marginLeft: "1em",
 							marginRight: "1em",
 						}}

@@ -158,10 +158,16 @@ main {
 	a {
 		text-decoration: none;
 		color: var(--color-primary-dark);
-		&:hover {
+
+		&:not(.embed):hover {
 			text-decoration: underline;
-			text-decoration-style: wavy;
-			text-decoration-thickness: 1.25px;
+			text-decoration-thickness: 2px;
+		}
+		&.embed:hover {
+			p {
+				text-decoration: underline;
+				text-decoration-thickness: 2px;
+			}
 		}
 	}
 }
@@ -276,4 +282,13 @@ a {
 			}
 		}
 	}
+}
+
+#youtubeThumbnail:before {
+	content: "";
+	position: absolute;
+	width: 240px;
+	height: 67.5px;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 6em 6em 100% 100%;
 }

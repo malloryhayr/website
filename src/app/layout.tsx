@@ -2,11 +2,13 @@ import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 
 import { Rubik } from "next/font/google";
+import localFont from "next/font/local";
+
 import "./(style)/global.scss";
 import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
 
-const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
+export const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
 export async function generateMetadata(): Promise<Metadata> {
 	const headersList = headers();
