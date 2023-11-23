@@ -1,10 +1,7 @@
 import { SiYoutube } from "@icons-pack/react-simple-icons";
-import { FaEye } from "react-icons/fa";
 
 import { XMLParser } from "fast-xml-parser";
-import Image from "next/image";
 import Link from "next/link";
-import { dseg } from "@/app/layout";
 
 export default async function YouTube() {
 	const youtubeVideos = (await getYoutube()).feed.entry;
