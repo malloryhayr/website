@@ -197,7 +197,8 @@ interface YouTubeResponse {
 
 async function getYoutube(): Promise<YouTubeResponse> {
 	const res = await fetch(
-		"https://www.youtube.com/feeds/videos.xml?channel_id=UC62WYRrDRwINxIjzj-wJVkQ"
+		"https://www.youtube.com/feeds/videos.xml?channel_id=UC62WYRrDRwINxIjzj-wJVkQ",
+		{ next: { revalidate: 3600 } }
 	);
 
 	if (!res.ok) {
