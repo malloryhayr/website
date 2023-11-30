@@ -9,16 +9,19 @@
 	},
 	"dependencies": {
 		"@icons-pack/react-simple-icons": "^9.1.0",
+		"@react-three/fiber": "^8.15.11",
 		"fast-xml-parser": "^4.3.2",
 		"next": "^14.0.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-icons": "^4.12.0"
+		"react-icons": "^4.12.0",
+		"three": "^0.159.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.9.1",
 		"@types/react": "^18.2.37",
 		"@types/react-dom": "^18.2.15",
+		"@types/three": "^0.158.3",
 		"sass": "^1.69.5",
 		"typescript": "^5.2.2"
 	}
