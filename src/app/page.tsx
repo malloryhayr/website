@@ -29,7 +29,7 @@ export default async function Home() {
 				<h2 style={{ color: "var(--color-header)", textAlign: "center" }}>
 					elsewhere on the web
 				</h2>
-				{/* <Spotify /> */}
+				<Spotify />
 				<YouTube />
 				<Mastodon />
 				<main
