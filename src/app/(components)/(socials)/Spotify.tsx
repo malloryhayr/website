@@ -3,8 +3,7 @@
 import useSWR from "swr";
 
 import Image from "next/image";
-
-import { SiSpotify } from "@icons-pack/react-simple-icons";
+import Link from "next/link";
 
 export default function Spotify() {
 	const { data, error, isLoading } = useSWR<{ data: LastFmResponse }>(
@@ -17,63 +16,67 @@ export default function Spotify() {
 		const track = data.data.recenttracks.track[0];
 
 		return (
-			<div
-				style={{
-					marginTop: "1em",
-					borderTop: "2px solid #141213",
-				}}
-			>
-				<div
+			<div style={{ marginTop: "1em" }}>
+				<Link
 					style={{
-						borderTop: "2px solid #6d6e6d",
-						background: "linear-gradient(to bottom, #6C6D6D, #4B4A4A)",
-						color: "white",
-						border: "2px solid #323233",
-						height: "72px",
-						display: "flex",
+						borderTop: "2px solid #141213",
+						textDecoration: "none",
 					}}
+					href="https://www.last.fm/user/iGalaxyYT"
+					target="_blank"
 				>
-					<Image
-						src={track.image[track.image.length - 1]["#text"]}
-						width={72}
-						height={72}
-						alt={track.album["#text"]}
-					/>
 					<div
 						style={{
-							padding: "16px",
-							fontWeight: 500,
-							textOverflow: "ellipsis",
-							overflow: "hidden",
-							whiteSpace: "nowrap",
-							textShadow: "0px -2px 0px #484748",
-							position: "relative",
-							width: "100%",
+							borderTop: "2px solid #6d6e6d",
+							background: "linear-gradient(to bottom, #6C6D6D, #4B4A4A)",
+							color: "white",
+							border: "2px solid #323233",
+							height: "72px",
+							display: "flex",
 						}}
 					>
-						{track.name}
-						<span
+						<Image
+							src={track.image[track.image.length - 1]["#text"]}
+							width={72}
+							height={72}
+							alt={track.album["#text"]}
+						/>
+						<div
 							style={{
-								fontSize: "14px",
-								display: "block",
-								marginTop: "4px",
+								padding: "16px",
+								fontWeight: 500,
+								textOverflow: "ellipsis",
+								overflow: "hidden",
+								whiteSpace: "nowrap",
+								textShadow: "0px -2px 0px #484748",
+								position: "relative",
+								width: "100%",
 							}}
 						>
-							{track.artist["#text"]}
-						</span>
-						<Image
-							src="/assets/Spotify-2008.png"
-							height={42}
-							width={42}
-							alt="Spotify"
-							style={{
-								position: "absolute",
-								right: 4,
-								bottom: -8,
-							}}
-						/>
+							{track.name}
+							<span
+								style={{
+									fontSize: "14px",
+									display: "block",
+									marginTop: "4px",
+								}}
+							>
+								{track.artist["#text"]}
+							</span>
+							<Image
+								src="/assets/Spotify-2008.png"
+								height={42}
+								width={42}
+								alt="Spotify"
+								style={{
+									position: "absolute",
+									right: 4,
+									bottom: -8,
+								}}
+							/>
+						</div>
 					</div>
-				</div>
+				</Link>
 			</div>
 		);
 	} else {

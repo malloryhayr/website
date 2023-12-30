@@ -1,10 +1,6 @@
 import Link from "next/link";
 
-import {
-	SiMastodon,
-	SiSpotify,
-	SiTumblr,
-} from "@icons-pack/react-simple-icons";
+import { SiMastodon, SiTumblr } from "@icons-pack/react-simple-icons";
 
 import YouTube from "./(components)/(socials)/YouTube";
 import Spotify from "./(components)/(socials)/Spotify";
