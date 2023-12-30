@@ -4,6 +4,7 @@ import { SiMastodon, SiTumblr } from "@icons-pack/react-simple-icons";
 
 import YouTube from "./(components)/(socials)/YouTube";
 import Spotify from "./(components)/(socials)/Spotify";
+import Mastodon from "./(components)/(socials)/Mastodon";
 
 export default async function Home() {
 	return (
@@ -30,26 +31,7 @@ export default async function Home() {
 				</h2>
 				{/* <Spotify /> */}
 				<YouTube />
-				<main
-					style={{
-						marginTop: "1em",
-						padding: "0",
-						backgroundColor: "#ffe9cf",
-						borderColor: "#dbb68a",
-						color: "#8a341a",
-					}}
-				>
-					<h3
-						style={{
-							display: "inline-flex",
-							marginTop: "0.9em",
-							marginLeft: "1em",
-							marginRight: "1em",
-						}}
-					>
-						<SiMastodon style={{ marginRight: "0.25em" }} /> mastodon
-					</h3>
-				</main>
+				<Mastodon />
 				<main
 					style={{
 						marginTop: "1em",

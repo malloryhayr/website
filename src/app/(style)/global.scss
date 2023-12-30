@@ -163,12 +163,6 @@ main {
 			text-decoration: underline;
 			text-decoration-thickness: 2px;
 		}
-		&.embed:hover {
-			p {
-				text-decoration: underline;
-				text-decoration-thickness: 2px;
-			}
-		}
 	}
 }
 
@@ -291,4 +285,23 @@ a {
 	height: 67.5px;
 	background-color: rgba(255, 255, 255, 0.25);
 	border-radius: 6em 6em 100% 100%;
+}
+
+.mastodon a {
+	text-decoration: none;
+	&:not(.avatar):hover {
+		text-decoration: underline;
+		color: rgb(69, 149, 181) !important;
+	}
+}
+
+.mention {
+	color: rgb(69, 149, 181) !important;
+}
+
+.mastodon {
+	background-color: #1b2836;
+	&:hover {
+		background-color: #171f2a;
+	}
 }
