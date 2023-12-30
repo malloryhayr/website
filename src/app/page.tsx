@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 import {
-	SiYoutube,
 	SiMastodon,
-	SiTwitter,
+	SiSpotify,
 	SiTumblr,
 } from "@icons-pack/react-simple-icons";
 
 import YouTube from "./(components)/(socials)/YouTube";
+import Spotify from "./(components)/(socials)/Spotify";
 
 export default async function Home() {
 	return (
@@ -32,6 +32,7 @@ export default async function Home() {
 				<h2 style={{ color: "var(--color-header)", textAlign: "center" }}>
 					elsewhere on the web
 				</h2>
+				{/* <Spotify /> */}
 				<YouTube />
 				<main
 					style={{
@@ -51,35 +52,6 @@ export default async function Home() {
 						}}
 					>
 						<SiMastodon style={{ marginRight: "0.25em" }} /> mastodon
-					</h3>
-				</main>
-				<main
-					style={{
-						marginTop: "1em",
-						padding: "0",
-						backgroundColor: "#c7e8fc",
-						borderColor: "#336791",
-						color: "#214c70",
-					}}
-				>
-					<h3
-						style={{
-							display: "inline-flex",
-							marginTop: "0.9em",
-							marginLeft: "1em",
-							marginRight: "1em",
-						}}
-					>
-						<div
-							style={{
-								width: "24px",
-								height: "24px",
-								background: "linear-gradient(#214c70, #5489b4)",
-								marginRight: "0.25em",
-								borderRadius: "0.125em",
-							}}
-						></div>{" "}
-						bluesky
 					</h3>
 				</main>
 				<main

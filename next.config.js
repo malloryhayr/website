@@ -6,6 +6,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "*.ytimg.com",
 			},
+			{
+				protocol: "https",
+				hostname: "*.fastly.net",
+			},
 		],
 	},
 };
