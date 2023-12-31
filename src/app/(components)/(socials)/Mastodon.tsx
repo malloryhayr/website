@@ -20,13 +20,14 @@ export default function Spotify() {
 	);
 
 	function attachmentMap(attachment: MastodonAttachment) {
+		const scaling = 210 / attachment.meta.original.width;
 		return (
 			<Link
 				key={`attachment-${attachment.id}`}
 				href={attachment.url}
 				target="_blank"
 			>
-				<img
+				<Image
 					src={attachment.url}
 					style={{
 						cursor: "zoom-in",
@@ -36,8 +37,10 @@ export default function Spotify() {
 						blockSize: "auto",
 						border: "1px solid #2c3c52",
 						verticalAlign: "top",
-						maxWidth: "210px",
 					}}
+					width={210}
+					height={attachment.meta.original.height * scaling}
+					alt={attachment.description}
 				/>
 			</Link>
 		);
@@ -175,7 +178,7 @@ export default function Spotify() {
 						</Link>
 					</div>
 					{/* tweet-body */}
-					<article style={{ display: "flow-root" }}>
+					<article style={{ display: "flow-root", marginBottom: "-24px" }}>
 						<div
 							style={{
 								display: "inline",
@@ -210,7 +213,11 @@ export default function Spotify() {
 						)}
 					</article>
 					<SiMastodon
-						style={{ float: "right", marginRight: "-2px" }}
+						style={{
+							position: "absolute",
+							top: "10px",
+							right: "10px",
+						}}
 						width={16}
 						color="rgb(212, 227, 237)"
 					/>
