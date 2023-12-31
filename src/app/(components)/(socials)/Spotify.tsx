@@ -64,7 +64,7 @@ export default function Spotify() {
 								{track.artist["#text"]}
 							</span>
 							<Image
-								src="/assets/Spotify-2008.png"
+								src="/assets/spotify.png"
 								height={42}
 								width={42}
 								alt="Spotify"
@@ -110,7 +110,7 @@ export default function Spotify() {
 						}}
 					>
 						<Image
-							src="/assets/Spotify-2008.png"
+							src="/assets/spotify.png"
 							height={42}
 							width={42}
 							alt="Spotify"

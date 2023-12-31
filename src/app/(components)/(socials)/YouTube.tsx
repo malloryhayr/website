@@ -109,7 +109,6 @@ export default async function YouTube() {
 									<h3
 										style={{
 											width: 258,
-											opacity: 0.75,
 											margin: 0,
 											marginBottom: "0.5em",
 											display: "inline-flex",
@@ -119,7 +118,7 @@ export default async function YouTube() {
 											textDecoration: "none",
 										}}
 									>
-										<SiYoutube /> YouTube
+										<img src="/assets/youtube.svg" height={24} />
 									</h3>
 								</div>
 							</Link>
