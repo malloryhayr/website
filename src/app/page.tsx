@@ -35,15 +35,11 @@ export default function Home() {
 				<a href="https://discord.gg/9taRw3PyKn" target="_blank">
 					@igalaxy
 				</a>{' '}
-				on Discord,{' '}
+				on Discord, and{' '}
 				<a href="https://farlands.cafe/@igalaxy" target="_blank" rel="me">
 					@igalaxy@farlands.cafe
 				</a>{' '}
-				on the fediverse, and{' '}
-				<a href="https://cohost.org/miichannel" target="_blank">
-					@miichannel
-				</a>{' '}
-				on cohost.
+				on the fediverse.
 			</p>
 			<OnlineStatus />
 		</>
