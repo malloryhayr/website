@@ -10,9 +10,12 @@ export interface GitHubPinnedRepo {
 
 async function getData() {
 	const data: GitHubPinnedRepo[] = await (
-		await fetch('https://gh-pinned-repos.egoist.dev/?username=malloryhayr', {
-			next: { revalidate: 10 },
-		})
+		await fetch(
+			'https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=malloryhayr',
+			{
+				next: { revalidate: 10 },
+			}
+		)
 	).json();
 
 	return data;

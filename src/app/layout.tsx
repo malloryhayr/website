@@ -31,7 +31,6 @@ export default function RootLayout({
 					<NavLink route="" />
 					<NavLink route="data" />
 					<NavLink route="projects" />
-					<NavLink route="blog" />
 				</nav>
 				<StyledComponentsRegistry>
 					<main>

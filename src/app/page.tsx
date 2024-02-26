@@ -15,8 +15,12 @@ export default function Home() {
 				</Suspense>
 			</p>
 			<p>
-				I'm a trans software engineer, game designer, & creator.
-				<br />I like doing funky stuff with Minecraft.
+				I make computers do stuff sometimes
+				<br />
+				I'm a big fan of Minecraft, the indie web, and the Nintendo Wii
+			</p>
+			<p>
+				This site is due to be replaced soon, but you can still look around!
 			</p>
 			<p>
 				You can find me at{' '}
@@ -36,8 +40,8 @@ export default function Home() {
 					@igalaxy@farlands.cafe
 				</a>{' '}
 				on the fediverse, and{' '}
-				<a href="https://cohost.org/igalaxy" target="_blank">
-					@igalaxy
+				<a href="https://cohost.org/miichannel" target="_blank">
+					@miichannel
 				</a>{' '}
 				on cohost.
 			</p>
