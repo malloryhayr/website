@@ -53,7 +53,7 @@ export async function generateMetadata(
 	const headersList = headers();
 
 	const title = headersList.get('host')!;
-	const description = `Mallory — trans software engineer, game designer, & creator`;
+	const description = `Mallory — computer science, game design, and Minecraft enthusiast`;
 
 	return {
 		title,
